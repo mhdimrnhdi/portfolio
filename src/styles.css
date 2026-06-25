@@ -53,7 +53,14 @@
    Custom styles that @apply / Tailwind can't do
    ============================================== */
 
-/* ---- Animated Background Mesh ---- */
+/* ---- Animated Background Mesh & Canvas ---- */
+#bg-canvas {
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  pointer-events: none; /* Let clicks pass through to the rest of the site */
+}
+
 .bg-mesh {
   position: fixed;
   inset: 0;
