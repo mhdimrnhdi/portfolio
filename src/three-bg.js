@@ -73,9 +73,9 @@ export function initThreeBackground() {
   const windowHalfY = window.innerHeight / 2;
 
   document.addEventListener('mousemove', (event) => {
-    // Calculate normalized mouse coordinates (-1 to +1)
-    mouseX = (event.clientX - windowHalfX) * 0.0005;
-    mouseY = (event.clientY - windowHalfY) * 0.0005;
+    // Calculate normalized mouse coordinates (-1 to 1)
+    mouseX = (event.clientX - windowHalfX) / windowHalfX;
+    mouseY = (event.clientY - windowHalfY) / windowHalfY;
   });
 
   // 6. Theme Sync (Light/Dark mode colors)

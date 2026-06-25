@@ -3,10 +3,10 @@
 Welcome to the repository for my personal portfolio website! This project showcases my skills, experience, and featured projects as a Full-Stack Developer aspiring to transition into Data Analytics.
 
 ## What is this?
-This repository contains the source code for my interactive personal portfolio. It was recently migrated to a modern frontend build toolchain for improved developer experience and performance.
+This repository contains the source code for my interactive personal portfolio.
 
 ### Tech Stack
-- **Vite** for blazing fast builds and hot module replacement.
+- **Vite** for fast builds and hot module replacement.
 - **Tailwind CSS** for responsive, utility-first styling, glassmorphism, and dark mode support.
 - **Three.js** for the interactive, 3D particle network background canvas.
 - **Vanilla JavaScript** for core logic, DOM manipulation, and dynamic components (like the Card Builder).
