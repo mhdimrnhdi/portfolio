@@ -1,7 +1,56 @@
 /* ==============================================
-   styles.css — Custom styles that complement Tailwind
-   (layout/spacing handled by Tailwind; these
-    cover glassmorphism, animations, custom inputs)
+   Tailwind directives (replaces CDN script)
+   ============================================== */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ==============================================
+   @layer components — extracted repeated patterns
+   (replaces long utility strings in HTML)
+   ============================================== */
+@layer components {
+
+  /* Navigation */
+  .nav-link {
+    @apply text-xs font-bold text-slate-500 dark:text-slate-400
+           hover:text-slate-900 dark:hover:text-white
+           transition-colors duration-200 uppercase tracking-widest;
+  }
+
+  .mobile-nav-link {
+    @apply py-3 text-2xl font-bold text-slate-600 dark:text-slate-300
+           hover:text-slate-900 dark:hover:text-white hover:pl-2
+           transition-all duration-200;
+  }
+
+  /* Buttons */
+  .btn-primary {
+    @apply inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold
+           text-white bg-gradient-to-r from-blue-500 to-violet-500
+           hover:from-blue-600 hover:to-violet-600
+           shadow-lg shadow-blue-500/25 hover:shadow-blue-500/40
+           transition-all duration-200 hover:-translate-y-0.5 active:scale-95;
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold
+           text-slate-700 dark:text-slate-300
+           border border-black/10 dark:border-white/10
+           hover:bg-black/[0.04] dark:hover:bg-white/5
+           hover:border-black/20 dark:hover:border-white/20
+           transition-all duration-200 hover:-translate-y-0.5 active:scale-95;
+  }
+
+  /* Section label (small eyebrow text above headings) */
+  .section-label {
+    @apply inline-flex items-center gap-2 text-xs font-bold
+           uppercase tracking-[0.2em] mb-4;
+  }
+}
+
+/* ==============================================
+   Custom styles that @apply / Tailwind can't do
    ============================================== */
 
 /* ---- Animated Background Mesh ---- */
@@ -25,7 +74,7 @@ html:not(.dark) .bg-mesh {
     radial-gradient(ellipse at 50% 85%, rgba(16, 185, 129, 0.05) 0%, transparent 45%);
 }
 
-/* ---- Typewriter Cursor Blink ---- */
+/* ---- Typewriter Cursor ---- */
 .typewriter-cursor {
   animation: blink 1s step-end infinite;
   display: inline-block;
@@ -58,8 +107,6 @@ html:not(.dark) .bg-mesh {
   border-color: rgba(255, 255, 255, 0.14);
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
 }
-
-/* Light mode glass cards */
 html:not(.dark) .glass-card {
   background: rgba(255, 255, 255, 0.75);
   border: 1px solid rgba(0, 0, 0, 0.07);
@@ -91,7 +138,6 @@ html:not(.dark) .glass-card:hover {
   color: #93c5fd;
   transform: translateY(-1px);
 }
-
 html:not(.dark) .skill-chip {
   background: rgba(0, 0, 0, 0.03);
   border: 1px solid rgba(0, 0, 0, 0.08);
@@ -103,7 +149,7 @@ html:not(.dark) .skill-chip:hover {
   color: #2563eb;
 }
 
-/* ---- Tech Tag Chips (project cards) ---- */
+/* ---- Tech Tag Chips ---- */
 .tech-chip {
   display: inline-flex;
   align-items: center;
@@ -115,14 +161,13 @@ html:not(.dark) .skill-chip:hover {
   background: rgba(139, 92, 246, 0.1);
   border: 1px solid rgba(139, 92, 246, 0.15);
 }
-
 html:not(.dark) .tech-chip {
   color: #7c3aed;
   background: rgba(139, 92, 246, 0.07);
   border-color: rgba(139, 92, 246, 0.15);
 }
 
-/* ---- Project Cards — Tilt effect ---- */
+/* ---- Project Cards — Tilt ---- */
 .project-card {
   transform-style: preserve-3d;
   will-change: transform;
@@ -172,17 +217,11 @@ html:not(.dark) .toggle-switch {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(90deg,
-    transparent 0%,
-    rgba(255, 255, 255, 0.06) 50%,
-    transparent 100%);
+  background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.06) 50%, transparent 100%);
   animation: shimmer 1.8s infinite;
 }
 html:not(.dark) .skeleton-shimmer::after {
-  background: linear-gradient(90deg,
-    transparent 0%,
-    rgba(0, 0, 0, 0.06) 50%,
-    transparent 100%);
+  background: linear-gradient(90deg, transparent 0%, rgba(0,0,0,0.06) 50%, transparent 100%);
 }
 @keyframes shimmer {
   0%   { transform: translateX(-100%); }
@@ -190,10 +229,7 @@ html:not(.dark) .skeleton-shimmer::after {
 }
 
 /* ---- Craft Tab Styles ---- */
-.craft-tab {
-  cursor: pointer;
-  user-select: none;
-}
+.craft-tab { cursor: pointer; user-select: none; }
 .craft-tab.active-tab {
   background: #fff;
   color: #0f172a;
@@ -214,14 +250,10 @@ html.dark .craft-tab.active-tab {
   background: rgba(255, 255, 255, 0.08);
   outline: none;
   cursor: pointer;
-  transition: background 0.2s;
 }
-html:not(.dark) .craft-slider {
-  background: rgba(0, 0, 0, 0.1);
-}
+html:not(.dark) .craft-slider { background: rgba(0, 0, 0, 0.1); }
 .craft-slider::-webkit-slider-thumb {
   -webkit-appearance: none;
-  appearance: none;
   width: 18px;
   height: 18px;
   border-radius: 50%;
@@ -242,19 +274,6 @@ html:not(.dark) .craft-slider {
   border-radius: 50%;
   background: #3b82f6;
   cursor: grab;
-}
-
-/* ---- Color Swatch Active State ---- */
-.color-swatch {
-  transition: all 0.2s ease;
-}
-.color-swatch:hover {
-  transform: scale(1.1);
-}
-.color-swatch.active {
-  ring: 2px;
-  outline: 2px solid var(--swatch-color, #3b82f6);
-  outline-offset: 3px;
 }
 
 /* ---- Contact Link Cards ---- */
@@ -299,31 +318,12 @@ html:not(.dark) .contact-link:hover {
 /* ---- Custom Scrollbar ---- */
 ::-webkit-scrollbar { width: 6px; }
 ::-webkit-scrollbar-track { background: transparent; }
-::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.12);
-  border-radius: 9999px;
-}
-html:not(.dark) ::-webkit-scrollbar-thumb {
-  background: rgba(0, 0, 0, 0.15);
-}
-::-webkit-scrollbar-thumb:hover {
-  background: rgba(255, 255, 255, 0.2);
-}
+::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.12); border-radius: 9999px; }
+html:not(.dark) ::-webkit-scrollbar-thumb { background: rgba(0,0,0,0.15); }
+::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.2); }
 
-/* ---- Mobile nav active state (hamburger → X) ---- */
-body.nav-open .ham-line:nth-child(1) {
-  transform: translateY(8px) rotate(45deg);
-}
-body.nav-open .ham-line:nth-child(2) {
-  opacity: 0;
-  transform: scaleX(0);
-}
-body.nav-open .ham-line:nth-child(3) {
-  transform: translateY(-8px) rotate(-45deg);
-  width: 100%;
-}
-
-/* ---- Prevent scroll when mobile nav is open ---- */
-body.nav-open {
-  overflow: hidden;
-}
+/* ---- Hamburger → X animation ---- */
+body.nav-open .ham-line:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+body.nav-open .ham-line:nth-child(2) { opacity: 0; transform: scaleX(0); }
+body.nav-open .ham-line:nth-child(3) { transform: translateY(-8px) rotate(-45deg); width: 100%; }
+body.nav-open { overflow: hidden; }
