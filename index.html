@@ -1,233 +1,148 @@
 <!doctype html>
 <html lang="en" class="scroll-smooth dark">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Muhammad Imran Hadi | Full-Stack Developer & Data Analyst</title>
-    <meta
-      name="description"
-      content="Portfolio of Muhammad Imran Hadi — Full-Stack Developer & Aspiring Data Analyst. Skilled in Python, Pandas, Tableau, AI integration, and modern web development."
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap"
-      rel="stylesheet"
-    />
-    <script src="https://unpkg.com/@phosphor-icons/web"></script>
-    <!-- CSS injected by Vite via main.js -->
-  </head>
 
-  <body
-    class="font-inter bg-gray-50 text-slate-900 dark:bg-zinc-950 dark:text-slate-200 antialiased overflow-x-hidden"
-  >
-    <div
-      id="scroll-progress"
-      class="fixed top-0 left-0 h-[3px] z-[200] bg-gradient-to-r from-blue-500 via-violet-500 to-blue-500 transition-none pointer-events-none"
-      style="width: 0%"
-    ></div>
-    <canvas id="bg-canvas" aria-hidden="true"></canvas>
-    <div class="bg-mesh" aria-hidden="true"></div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Muhammad Imran Hadi | Full-Stack Developer & Data Analyst</title>
+  <meta name="description"
+    content="Portfolio of Muhammad Imran Hadi — Full-Stack Developer & Aspiring Data Analyst. Skilled in Python, Pandas, Tableau, AI integration, and modern web development." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet" />
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  <!-- CSS injected by Vite via main.js -->
+</head>
 
-    <!-- NAV -->
-    <nav class="fixed top-0 left-0 right-0 z-[100] pt-3 px-4">
-      <div class="max-w-6xl mx-auto">
-        <div
-          class="flex items-center justify-between px-5 py-3 rounded-2xl bg-white/80 dark:bg-zinc-900/80 backdrop-blur-xl border border-black/[0.06] dark:border-white/[0.06] shadow-sm dark:shadow-none transition-colors duration-300"
-        >
-          <a
-            href="#about"
-            class="text-xl font-black tracking-tighter text-slate-900 dark:text-white hover:text-blue-500 dark:hover:text-blue-400 transition-colors duration-200"
-            >HADI.</a
-          >
-          <div class="hidden md:flex items-center gap-6">
-            <a href="#about" class="nav-link">About</a>
-            <a href="#skills" class="nav-link">Skills</a>
-            <a href="#craft" class="nav-link">Craft</a>
-            <a href="#projects" class="nav-link">Projects</a>
-            <a href="#experience" class="nav-link">Experience</a>
-            <a href="#contact" class="nav-link">Contact</a>
-          </div>
-          <div class="flex items-center gap-2">
-            <button
-              id="theme-toggle"
-              aria-label="Toggle theme"
-              class="flex items-center justify-center w-9 h-9 rounded-xl bg-black/[0.04] dark:bg-white/5 border border-black/[0.08] dark:border-white/10 hover:bg-black/[0.08] dark:hover:bg-white/10 transition-all duration-200 hover:scale-105"
-            >
-              <i
-                id="theme-icon"
-                class="ph ph-moon text-slate-600 dark:text-slate-300 text-lg"
-              ></i>
-            </button>
-            <button
-              id="hamburger"
-              aria-label="Open navigation menu"
-              class="flex md:hidden flex-col items-center justify-center w-9 h-9 rounded-xl bg-black/[0.04] dark:bg-white/5 border border-black/[0.08] dark:border-white/10 gap-1.5 px-2 transition-all duration-200 hover:bg-black/[0.08] dark:hover:bg-white/10"
-            >
-              <span
-                class="ham-line block w-full h-0.5 bg-slate-600 dark:bg-slate-300 rounded transition-all duration-300 origin-center"
-              ></span>
-              <span
-                class="ham-line block w-full h-0.5 bg-slate-600 dark:bg-slate-300 rounded transition-all duration-300"
-              ></span>
-              <span
-                class="ham-line block w-3/4 h-0.5 bg-slate-600 dark:bg-slate-300 rounded transition-all duration-300 self-end origin-center"
-              ></span>
-            </button>
-          </div>
-        </div>
-      </div>
-    </nav>
+<body class="font-inter bg-gray-50 text-slate-900 dark:bg-zinc-950 dark:text-slate-200 antialiased overflow-x-hidden">
+  <div id="scroll-progress"
+    class="fixed top-0 left-0 h-[3px] z-[200] bg-gradient-to-r from-blue-500 via-violet-500 to-blue-500 transition-none pointer-events-none"
+    style="width: 0%"></div>
+  <canvas id="bg-canvas" aria-hidden="true"></canvas>
+  <div class="bg-mesh" aria-hidden="true"></div>
 
-    <!-- MOBILE DRAWER -->
-    <div id="mobile-nav" class="fixed inset-0 z-[90] pointer-events-none">
+  <!-- NAV -->
+  <nav class="fixed top-0 left-0 right-0 z-[100] pt-3 px-4">
+    <div class="max-w-6xl mx-auto">
       <div
-        id="nav-overlay"
-        class="absolute inset-0 bg-black/50 opacity-0 transition-opacity duration-300 backdrop-blur-sm"
-      ></div>
-      <div
-        id="nav-drawer"
-        class="absolute right-0 top-0 h-full w-72 bg-white dark:bg-zinc-900 border-l border-black/[0.08] dark:border-white/[0.08] p-8 pt-24 translate-x-full transition-transform duration-300 ease-out shadow-2xl"
-      >
-        <div class="flex flex-col gap-1">
-          <a
-            href="#about"
-            class="mobile-nav-link border-b border-black/[0.04] dark:border-white/[0.04]"
-            >About</a
-          >
-          <a
-            href="#skills"
-            class="mobile-nav-link border-b border-black/[0.04] dark:border-white/[0.04]"
-            >Skills</a
-          >
-          <a
-            href="#craft"
-            class="mobile-nav-link border-b border-black/[0.04] dark:border-white/[0.04]"
-            >Craft</a
-          >
-          <a
-            href="#projects"
-            class="mobile-nav-link border-b border-black/[0.04] dark:border-white/[0.04]"
-            >Projects</a
-          >
-          <a
-            href="#experience"
-            class="mobile-nav-link border-b border-black/[0.04] dark:border-white/[0.04]"
-            >Experience</a
-          >
-          <a href="#contact" class="mobile-nav-link">Contact</a>
+        class="flex items-center justify-between px-5 py-3 rounded-2xl bg-white/80 dark:bg-zinc-900/80 backdrop-blur-xl border border-black/[0.06] dark:border-white/[0.06] shadow-sm dark:shadow-none transition-colors duration-300">
+        <a href="#about"
+          class="text-xl font-black tracking-tighter text-slate-900 dark:text-white hover:text-blue-500 dark:hover:text-blue-400 transition-colors duration-200">HADI.</a>
+        <div class="hidden md:flex items-center gap-6">
+          <a href="#about" class="nav-link">About</a>
+          <a href="#skills" class="nav-link">Skills</a>
+          <a href="#craft" class="nav-link">Craft</a>
+          <a href="#projects" class="nav-link">Projects</a>
+          <a href="#experience" class="nav-link">Experience</a>
+          <a href="#contact" class="nav-link">Contact</a>
         </div>
-        <div
-          class="mt-10 pt-6 border-t border-black/[0.06] dark:border-white/[0.06]"
-        >
-          <p
-            class="text-xs text-slate-400 font-semibold uppercase tracking-widest mb-4"
-          >
-            Find me on
-          </p>
-          <div class="flex gap-4">
-            <a
-              href="https://github.com/mhdimrnhdi"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="text-slate-400 hover:text-slate-900 dark:hover:text-white text-2xl transition-colors"
-              ><i class="ph ph-github-logo"></i
-            ></a>
-            <a
-              href="https://linkedin.com/in/imranhadikhairi"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="text-slate-400 hover:text-blue-500 text-2xl transition-colors"
-              ><i class="ph ph-linkedin-logo"></i
-            ></a>
-            <a
-              href="mailto:hadikayell@gmail.com"
-              class="text-slate-400 hover:text-slate-900 dark:hover:text-white text-2xl transition-colors"
-              ><i class="ph ph-envelope-simple"></i
-            ></a>
-          </div>
+        <div class="flex items-center gap-2">
+          <button id="theme-toggle" aria-label="Toggle theme"
+            class="flex items-center justify-center w-9 h-9 rounded-xl bg-black/[0.04] dark:bg-white/5 border border-black/[0.08] dark:border-white/10 hover:bg-black/[0.08] dark:hover:bg-white/10 transition-all duration-200 hover:scale-105">
+            <i id="theme-icon" class="ph ph-moon text-slate-600 dark:text-slate-300 text-lg"></i>
+          </button>
+          <button id="hamburger" aria-label="Open navigation menu"
+            class="flex md:hidden flex-col items-center justify-center w-9 h-9 rounded-xl bg-black/[0.04] dark:bg-white/5 border border-black/[0.08] dark:border-white/10 gap-1.5 px-2 transition-all duration-200 hover:bg-black/[0.08] dark:hover:bg-white/10">
+            <span
+              class="ham-line block w-full h-0.5 bg-slate-600 dark:bg-slate-300 rounded transition-all duration-300 origin-center"></span>
+            <span
+              class="ham-line block w-full h-0.5 bg-slate-600 dark:bg-slate-300 rounded transition-all duration-300"></span>
+            <span
+              class="ham-line block w-3/4 h-0.5 bg-slate-600 dark:bg-slate-300 rounded transition-all duration-300 self-end origin-center"></span>
+          </button>
         </div>
       </div>
     </div>
+  </nav>
 
-    <main>
-      <!-- HERO -->
-      <section
-        id="about"
-        class="min-h-screen flex items-center relative pt-36 pb-24"
-      >
-        <div class="max-w-6xl mx-auto px-6 w-full">
-          <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-            <div class="reveal">
-              <span class="section-label text-blue-500 dark:text-blue-400">
-                <span class="w-8 h-px bg-blue-500 dark:bg-blue-400"></span>
-                Hi, my name is
-              </span>
-              <h1
-                class="text-5xl sm:text-6xl lg:text-[4.5rem] font-black leading-[1.05] tracking-tight mb-5 text-slate-900 dark:text-white"
-              >
-                Muhammad<br />Imran Hadi.
-              </h1>
-              <div class="flex items-center gap-3 mb-6 h-10 overflow-hidden">
-                <span
-                  class="text-2xl sm:text-3xl font-bold text-slate-400 dark:text-slate-500 flex-shrink-0"
-                  >I'm a&nbsp;</span
-                >
-                <span
-                  id="typewriter"
-                  class="text-2xl sm:text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-violet-500"
-                ></span>
-                <span
-                  class="typewriter-cursor text-2xl sm:text-3xl font-black text-blue-500"
-                  >|</span
-                >
-              </div>
-              <p
-                class="text-lg text-slate-500 dark:text-slate-400 leading-relaxed max-w-xl mb-10"
-              >
-                Computer Science graduate with expertise in full-stack
-                engineering and AI integration. Passionate about uncovering
-                insights from data and building elegant, robust systems.
-              </p>
-              <div class="flex flex-wrap gap-3">
-                <a href="#projects" class="btn-primary"
-                  ><i class="ph ph-folder-open"></i> View My Work</a
-                >
-                <a href="#contact" class="btn-outline"
-                  ><i class="ph ph-envelope-simple"></i> Get In Touch</a
-                >
-                <a
-                  href="https://github.com/mhdimrnhdi"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="btn-outline"
-                  aria-label="GitHub profile"
-                  ><i class="ph ph-github-logo"></i> GitHub</a
-                >
-              </div>
+  <!-- MOBILE DRAWER -->
+  <div id="mobile-nav" class="fixed inset-0 z-[90] pointer-events-none">
+    <div id="nav-overlay"
+      class="absolute inset-0 bg-black/50 opacity-0 transition-opacity duration-300 backdrop-blur-sm"></div>
+    <div id="nav-drawer"
+      class="absolute right-0 top-0 h-full w-72 bg-white dark:bg-zinc-900 border-l border-black/[0.08] dark:border-white/[0.08] p-8 pt-24 translate-x-full transition-transform duration-300 ease-out shadow-2xl">
+      <div class="flex flex-col gap-1">
+        <a href="#about" class="mobile-nav-link border-b border-black/[0.04] dark:border-white/[0.04]">About</a>
+        <a href="#skills" class="mobile-nav-link border-b border-black/[0.04] dark:border-white/[0.04]">Skills</a>
+        <a href="#craft" class="mobile-nav-link border-b border-black/[0.04] dark:border-white/[0.04]">Craft</a>
+        <a href="#projects" class="mobile-nav-link border-b border-black/[0.04] dark:border-white/[0.04]">Projects</a>
+        <a href="#experience"
+          class="mobile-nav-link border-b border-black/[0.04] dark:border-white/[0.04]">Experience</a>
+        <a href="#contact" class="mobile-nav-link">Contact</a>
+      </div>
+      <div class="mt-10 pt-6 border-t border-black/[0.06] dark:border-white/[0.06]">
+        <p class="text-xs text-slate-400 font-semibold uppercase tracking-widest mb-4">Find me on</p>
+        <div class="flex gap-4">
+          <a href="https://github.com/mhdimrnhdi" target="_blank" rel="noopener noreferrer"
+            class="text-slate-400 hover:text-slate-900 dark:hover:text-white text-2xl transition-colors"><i
+              class="ph ph-github-logo"></i></a>
+          <a href="https://linkedin.com/in/imranhadikhairi" target="_blank" rel="noopener noreferrer"
+            class="text-slate-400 hover:text-blue-500 text-2xl transition-colors"><i
+              class="ph ph-linkedin-logo"></i></a>
+          <a href="mailto:hadikayell@gmail.com"
+            class="text-slate-400 hover:text-slate-900 dark:hover:text-white text-2xl transition-colors"><i
+              class="ph ph-envelope-simple"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <!-- HERO -->
+    <section id="about" class="min-h-screen flex items-center relative pt-36 pb-24">
+      <div class="max-w-6xl mx-auto px-6 w-full">
+        <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          <div class="reveal">
+            <span class="section-label text-blue-500 dark:text-blue-400">
+              <span class="w-8 h-px bg-blue-500 dark:bg-blue-400"></span>
+              Hi, my name is
+            </span>
+            <h1
+              class="text-5xl sm:text-6xl lg:text-[4.5rem] font-black leading-[1.05] tracking-tight mb-5 text-slate-900 dark:text-white">
+              Muhammad
+              <br />
+              Imran Hadi.
+            </h1>
+            <div class="flex items-center gap-3 mb-6 h-10 overflow-hidden">
+              <span class="text-2xl sm:text-3xl font-bold text-slate-400 dark:text-slate-500 flex-shrink-0">I'm
+                a&nbsp;</span>
+              <span id="typewriter"
+                class="text-2xl sm:text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-violet-500"></span>
+              <span class="typewriter-cursor text-2xl sm:text-3xl font-black text-blue-500">|</span>
             </div>
+            <p class="text-lg text-slate-500 dark:text-slate-400 leading-relaxed max-w-xl mb-10">Computer Science
+              graduate with expertise in full-stack engineering and AI integration. Passionate about uncovering insights
+              from data and building elegant, robust systems.</p>
+            <div class="flex flex-wrap gap-3">
+              <a href="#projects" class="btn-primary">
+                <i class="ph ph-folder-open"></i>
+                View My Work
+              </a>
+              <a href="#contact" class="btn-outline">
+                <i class="ph ph-envelope-simple"></i>
+                Get In Touch
+              </a>
+              <a href="https://github.com/mhdimrnhdi" target="_blank" rel="noopener noreferrer" class="btn-outline"
+                aria-label="GitHub profile">
+                <i class="ph ph-github-logo"></i>
+                GitHub
+              </a>
+            </div>
+          </div>
 
-            <!-- Floating cards (desktop) -->
-            <div
-              class="hidden lg:block relative h-[420px] reveal"
-              style="transition-delay: 0.2s"
-            >
-              <div
-                class="glass-card absolute top-0 right-0 w-72 float-card p-5"
-                style="animation-delay: 0s"
-              >
-                <div class="flex items-center gap-1.5 mb-4">
-                  <div class="w-3 h-3 rounded-full bg-red-400/70"></div>
-                  <div class="w-3 h-3 rounded-full bg-amber-400/70"></div>
-                  <div class="w-3 h-3 rounded-full bg-green-400/70"></div>
-                  <span
-                    class="text-slate-500 dark:text-slate-600 text-xs ml-2 font-mono"
-                    >etl_pipeline.py</span
-                  >
-                </div>
-                <pre
-                  class="font-mono text-[0.72rem] leading-relaxed text-slate-500 dark:text-slate-500"
-                ><code><span class="text-violet-500 dark:text-violet-400">import</span> <span class="text-slate-700 dark:text-slate-300">pandas</span> <span class="text-violet-500 dark:text-violet-400">as</span> <span class="text-slate-700 dark:text-slate-300">pd</span>
+          <!-- Floating cards (desktop) -->
+          <div class="hidden lg:block relative h-[420px] reveal" style="transition-delay: 0.2s">
+            <div class="glass-card absolute top-0 right-0 w-72 float-card p-5" style="animation-delay: 0s">
+              <div class="flex items-center gap-1.5 mb-4">
+                <div class="w-3 h-3 rounded-full bg-red-400/70"></div>
+                <div class="w-3 h-3 rounded-full bg-amber-400/70"></div>
+                <div class="w-3 h-3 rounded-full bg-green-400/70"></div>
+                <span class="text-slate-500 dark:text-slate-600 text-xs ml-2 font-mono">etl_pipeline.py</span>
+              </div>
+              <pre
+                class="font-mono text-[0.72rem] leading-relaxed text-slate-500 dark:text-slate-500"><code><span class="text-violet-500 dark:text-violet-400">import</span> <span class="text-slate-700 dark:text-slate-300">pandas</span> <span class="text-violet-500 dark:text-violet-400">as</span> <span class="text-slate-700 dark:text-slate-300">pd</span>
 <span class="text-violet-500 dark:text-violet-400">from</span> <span class="text-slate-700 dark:text-slate-300">fastapi</span> <span class="text-violet-500 dark:text-violet-400">import</span> <span class="text-slate-700 dark:text-slate-300">FastAPI</span>
 
 <span class="text-slate-400 dark:text-slate-600"># Load &amp; clean raw data</span>
@@ -236,1090 +151,657 @@
   columns<span class="text-slate-500">=</span>{<span class="text-emerald-600 dark:text-emerald-400">'e_code'</span>: <span class="text-emerald-600 dark:text-emerald-400">'id'</span>}
 )
 <span class="text-slate-700 dark:text-slate-300">app</span> <span class="text-slate-500">=</span> <span class="text-blue-500 dark:text-blue-400">FastAPI</span>()</code></pre>
-              </div>
-              <div
-                class="glass-card absolute bottom-24 right-0 float-card"
-                style="animation-delay: 0.8s"
-              >
-                <div class="flex items-center gap-3 px-5 py-4">
-                  <div
-                    class="w-10 h-10 rounded-xl bg-blue-500/10 flex items-center justify-center flex-shrink-0"
-                  >
-                    <i
-                      class="ph ph-folder-open text-blue-500 dark:text-blue-400 text-lg"
-                    ></i>
-                  </div>
-                  <div>
-                    <p
-                      class="text-2xl font-black text-slate-900 dark:text-white leading-none"
-                    >
-                      3+
-                    </p>
-                    <p class="text-xs text-slate-500 font-medium">Projects</p>
-                  </div>
-                </div>
-              </div>
-              <div
-                class="glass-card absolute bottom-6 left-8 float-card"
-                style="animation-delay: 1.5s"
-              >
-                <div class="flex items-center gap-3 px-5 py-4">
-                  <div
-                    class="w-10 h-10 rounded-xl bg-violet-500/10 flex items-center justify-center flex-shrink-0"
-                  >
-                    <i
-                      class="ph ph-briefcase text-violet-500 dark:text-violet-400 text-lg"
-                    ></i>
-                  </div>
-                  <div>
-                    <p
-                      class="text-2xl font-black text-slate-900 dark:text-white leading-none"
-                    >
-                      6 mo
-                    </p>
-                    <p class="text-xs text-slate-500 font-medium">Internship</p>
-                  </div>
-                </div>
-              </div>
-              <div
-                class="glass-card absolute top-24 left-0 float-card"
-                style="animation-delay: 1s"
-              >
-                <div class="flex items-center gap-3 px-5 py-4">
-                  <div
-                    class="w-10 h-10 rounded-xl bg-emerald-500/10 flex items-center justify-center flex-shrink-0"
-                  >
-                    <i
-                      class="ph ph-graduation-cap text-emerald-500 dark:text-emerald-400 text-lg"
-                    ></i>
-                  </div>
-                  <div>
-                    <p
-                      class="text-sm font-black text-slate-900 dark:text-white leading-tight"
-                    >
-                      CS Graduate
-                    </p>
-                    <p class="text-xs text-slate-500 font-medium">
-                      Class of 2025
-                    </p>
-                  </div>
-                </div>
-              </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- SKILLS -->
-      <section id="skills" class="py-16">
-        <div class="max-w-6xl mx-auto px-6">
-          <div class="reveal mb-12">
-            <span class="section-label text-blue-500 dark:text-blue-400">
-              <span class="w-8 h-px bg-blue-500 dark:bg-blue-400"></span>
-              What I work with
-            </span>
-            <h2 class="text-4xl font-black text-slate-900 dark:text-white mb-3">
-              Technical Expertise
-            </h2>
-            <p class="text-slate-500 dark:text-slate-400 text-lg">
-              Bridging the gap between software engineering and data analytics.
-            </p>
-          </div>
-          <div class="grid md:grid-cols-2 gap-6">
-            <div class="glass-card reveal">
-              <div class="flex items-center gap-2 mb-2">
-                <div
-                  class="w-8 h-8 rounded-lg bg-emerald-500/10 flex items-center justify-center"
-                >
-                  <i
-                    class="ph ph-chart-line-up text-emerald-500 dark:text-emerald-400"
-                  ></i>
-                </div>
-                <h3 class="text-base font-bold text-slate-900 dark:text-white">
-                  Data Analytics & AI
-                </h3>
-              </div>
-              <p class="text-slate-500 text-sm mb-5">
-                My primary focus and strongest passion.
-              </p>
-              <div class="flex flex-wrap gap-2">
-                <span class="skill-chip">Pandas</span>
-                <span class="skill-chip">Tableau</span>
-                <span class="skill-chip">PowerBI</span>
-                <span class="skill-chip">ETL Pipelines</span>
-                <span class="skill-chip">LLM Integration</span>
-                <span class="skill-chip">Gemini API</span>
-                <span class="skill-chip">OpenAI API</span>
-                <span class="skill-chip">Ollama</span>
-                <span class="skill-chip">Web Scraping</span>
-              </div>
-            </div>
-            <div class="glass-card reveal" style="transition-delay: 0.1s">
-              <div class="flex items-center gap-2 mb-2">
-                <div
-                  class="w-8 h-8 rounded-lg bg-blue-500/10 flex items-center justify-center"
-                >
-                  <i class="ph ph-code text-blue-500 dark:text-blue-400"></i>
-                </div>
-                <h3 class="text-base font-bold text-slate-900 dark:text-white">
-                  Full-Stack Engineering
-                </h3>
-              </div>
-              <p class="text-slate-500 text-sm mb-5">
-                Building scalable web applications and APIs.
-              </p>
-              <div class="flex flex-wrap gap-2">
-                <span class="skill-chip">Python</span>
-                <span class="skill-chip">TypeScript / JavaScript</span>
-                <span class="skill-chip">SQL</span>
-                <span class="skill-chip">Java</span>
-                <span class="skill-chip">FastAPI</span>
-                <span class="skill-chip">Docker</span>
-                <span class="skill-chip">Tailwind CSS</span>
-                <span class="skill-chip">Firebase</span>
-                <span class="skill-chip">Git / GitHub</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- UI CRAFTSMANSHIP -->
-      <section id="craft" class="py-16">
-        <div class="max-w-6xl mx-auto px-6">
-          <div class="reveal mb-12">
-            <span class="section-label text-violet-500 dark:text-violet-400">
-              <span class="w-8 h-px bg-violet-500 dark:bg-violet-400"></span>
-              Live demo
-            </span>
-            <h2 class="text-4xl font-black text-slate-900 dark:text-white mb-3">
-              UI Craftsmanship
-            </h2>
-            <p class="text-slate-500 dark:text-slate-400 text-lg">
-              Frontend isn't just functional — it's felt. Interact with the
-              components below.
-            </p>
-          </div>
-
-          <!-- Tabs -->
-          <div
-            class="reveal flex gap-1 mb-8 p-1 bg-black/[0.04] dark:bg-white/[0.03] border border-black/[0.06] dark:border-white/[0.06] rounded-xl w-fit"
-          >
-            <button
-              id="tab-gallery-btn"
-              class="craft-tab active-tab px-5 py-2.5 rounded-lg text-sm font-semibold transition-all duration-200"
-            >
-              <i class="ph ph-squares-four mr-1.5"></i>Component Gallery
-            </button>
-            <button
-              id="tab-builder-btn"
-              class="craft-tab px-5 py-2.5 rounded-lg text-sm font-semibold text-slate-500 hover:text-slate-900 dark:hover:text-white transition-all duration-200"
-            >
-              <i class="ph ph-sliders-horizontal mr-1.5"></i>Card Builder
-            </button>
-          </div>
-
-          <!-- Panel 1: Component Gallery -->
-          <div id="panel-gallery" class="space-y-5 reveal">
-            <!-- Buttons -->
-            <div class="glass-card">
-              <h4
-                class="text-xs font-bold text-slate-400 dark:text-slate-500 uppercase tracking-widest mb-5"
-              >
-                Button Variants
-              </h4>
-              <div class="flex flex-wrap gap-3 items-center">
-                <button
-                  class="px-5 py-2.5 rounded-xl font-semibold text-white text-sm bg-gradient-to-r from-blue-500 to-violet-500 hover:from-blue-600 hover:to-violet-600 shadow-lg shadow-blue-500/20 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-blue-500/40 active:scale-95"
-                >
-                  Primary
-                </button>
-                <button
-                  class="px-5 py-2.5 rounded-xl font-semibold text-sm text-slate-700 dark:text-slate-300 border border-black/10 dark:border-white/10 hover:bg-black/[0.04] dark:hover:bg-white/5 transition-all duration-200 hover:-translate-y-0.5 active:scale-95"
-                >
-                  Outline
-                </button>
-                <button
-                  class="px-5 py-2.5 rounded-xl font-semibold text-sm text-slate-500 hover:text-slate-900 dark:hover:text-white hover:bg-black/[0.04] dark:hover:bg-white/5 transition-all duration-200 active:scale-95"
-                >
-                  Ghost
-                </button>
-                <button
-                  class="px-5 py-2.5 rounded-xl font-semibold text-white text-sm bg-emerald-500 hover:bg-emerald-600 shadow-lg shadow-emerald-500/20 transition-all duration-200 hover:-translate-y-0.5 active:scale-95"
-                >
-                  Success
-                </button>
-                <button
-                  class="px-5 py-2.5 rounded-xl font-semibold text-white text-sm bg-red-500 hover:bg-red-600 shadow-lg shadow-red-500/20 transition-all duration-200 hover:-translate-y-0.5 active:scale-95"
-                >
-                  Danger
-                </button>
-                <button
-                  class="px-5 py-2.5 rounded-xl font-semibold text-sm text-violet-600 dark:text-violet-300 bg-violet-500/10 border border-violet-500/20 hover:bg-violet-500/20 transition-all duration-200 hover:-translate-y-0.5 active:scale-95"
-                >
-                  Subtle
-                </button>
-                <button
-                  class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl font-semibold text-sm text-slate-700 dark:text-slate-300 border border-black/10 dark:border-white/10 hover:bg-black/[0.04] dark:hover:bg-white/5 transition-all duration-200 active:scale-95"
-                >
-                  <i
-                    class="ph ph-arrow-clockwise animate-spin"
-                    style="animation-duration: 1.5s"
-                  ></i
-                  >Loading
-                </button>
-              </div>
-            </div>
-
-            <!-- Badges + Toggles + Spinners -->
-            <div class="grid md:grid-cols-3 gap-5">
-              <div class="glass-card">
-                <h4
-                  class="text-xs font-bold text-slate-400 dark:text-slate-500 uppercase tracking-widest mb-5"
-                >
-                  Badge System
-                </h4>
-                <div class="flex flex-wrap gap-2">
-                  <span
-                    class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-blue-500/10 text-blue-600 dark:text-blue-400 border border-blue-500/20"
-                    ><span
-                      class="w-1.5 h-1.5 rounded-full bg-blue-500 dark:bg-blue-400"
-                    ></span>
-                    Default</span
-                  >
-                  <span
-                    class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20"
-                    ><span
-                      class="w-1.5 h-1.5 rounded-full bg-emerald-500 dark:bg-emerald-400 animate-pulse"
-                    ></span>
-                    Live</span
-                  >
-                  <span
-                    class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-amber-500/10 text-amber-600 dark:text-amber-400 border border-amber-500/20"
-                    ><span
-                      class="w-1.5 h-1.5 rounded-full bg-amber-500 dark:bg-amber-400"
-                    ></span>
-                    Pending</span
-                  >
-                  <span
-                    class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-red-500/10 text-red-600 dark:text-red-400 border border-red-500/20"
-                    ><span
-                      class="w-1.5 h-1.5 rounded-full bg-red-500 dark:bg-red-400"
-                    ></span>
-                    Error</span
-                  >
-                  <span
-                    class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-violet-500/10 text-violet-600 dark:text-violet-400 border border-violet-500/20"
-                    ><span
-                      class="w-1.5 h-1.5 rounded-full bg-violet-500 dark:bg-violet-400"
-                    ></span>
-                    Beta</span
-                  >
-                  <span
-                    class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-black/[0.04] dark:bg-white/5 text-slate-500 border border-black/[0.08] dark:border-white/10"
-                    >Neutral</span
-                  >
-                </div>
-              </div>
-              <div class="glass-card">
-                <h4
-                  class="text-xs font-bold text-slate-400 dark:text-slate-500 uppercase tracking-widest mb-5"
-                >
-                  Toggle Switches
-                </h4>
-                <div class="space-y-4">
-                  <div
-                    class="flex items-center justify-between cursor-pointer"
-                    onclick="
-                      this.querySelector('.toggle-switch').classList.toggle(
-                        'active',
-                      )
-                    "
-                  >
-                    <span
-                      class="text-sm text-slate-600 dark:text-slate-300 select-none"
-                      >Notifications</span
-                    >
-                    <div class="toggle-switch active">
-                      <div class="toggle-knob"></div>
-                    </div>
-                  </div>
-                  <div
-                    class="flex items-center justify-between cursor-pointer"
-                    onclick="
-                      this.querySelector('.toggle-switch').classList.toggle(
-                        'active',
-                      )
-                    "
-                  >
-                    <span
-                      class="text-sm text-slate-600 dark:text-slate-300 select-none"
-                      >Analytics</span
-                    >
-                    <div class="toggle-switch">
-                      <div class="toggle-knob"></div>
-                    </div>
-                  </div>
-                  <div
-                    class="flex items-center justify-between cursor-pointer"
-                    onclick="
-                      this.querySelector('.toggle-switch').classList.toggle(
-                        'active',
-                      )
-                    "
-                  >
-                    <span
-                      class="text-sm text-slate-600 dark:text-slate-300 select-none"
-                      >Auto-deploy</span
-                    >
-                    <div class="toggle-switch active">
-                      <div class="toggle-knob"></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="glass-card">
-                <h4
-                  class="text-xs font-bold text-slate-400 dark:text-slate-500 uppercase tracking-widest mb-5"
-                >
-                  Loading States
-                </h4>
-                <div class="flex items-center gap-6 mb-5">
-                  <div
-                    class="w-8 h-8 rounded-full border-2 border-black/10 dark:border-white/10 border-t-blue-500 animate-spin"
-                  ></div>
-                  <div class="flex gap-1.5">
-                    <div
-                      class="w-2 h-2 rounded-full bg-violet-500 animate-bounce"
-                      style="animation-delay: 0s"
-                    ></div>
-                    <div
-                      class="w-2 h-2 rounded-full bg-violet-500 animate-bounce"
-                      style="animation-delay: 0.15s"
-                    ></div>
-                    <div
-                      class="w-2 h-2 rounded-full bg-violet-500 animate-bounce"
-                      style="animation-delay: 0.3s"
-                    ></div>
-                  </div>
-                  <div class="relative w-8 h-8 flex-shrink-0">
-                    <div
-                      class="absolute inset-0 rounded-full bg-emerald-500/30 animate-ping"
-                    ></div>
-                    <div
-                      class="relative w-8 h-8 rounded-full bg-emerald-500/40 flex items-center justify-center"
-                    >
-                      <div class="w-3 h-3 rounded-full bg-emerald-500"></div>
-                    </div>
-                  </div>
-                </div>
-                <div class="space-y-2">
-                  <div
-                    class="h-2.5 rounded-full bg-black/[0.04] dark:bg-white/[0.04] skeleton-shimmer w-full"
-                  ></div>
-                  <div
-                    class="h-2.5 rounded-full bg-black/[0.04] dark:bg-white/[0.04] skeleton-shimmer w-4/5"
-                  ></div>
-                  <div
-                    class="h-2.5 rounded-full bg-black/[0.04] dark:bg-white/[0.04] skeleton-shimmer w-2/3"
-                  ></div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Form inputs + Toasts -->
-            <div class="grid md:grid-cols-2 gap-5">
-              <div class="glass-card">
-                <h4
-                  class="text-xs font-bold text-slate-400 dark:text-slate-500 uppercase tracking-widest mb-5"
-                >
-                  Form Elements
-                </h4>
-                <div class="space-y-3">
-                  <div class="relative">
-                    <i
-                      class="ph ph-user absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 dark:text-slate-500 text-sm pointer-events-none"
-                    ></i>
-                    <input
-                      type="text"
-                      placeholder="Full name"
-                      class="w-full pl-9 pr-4 py-2.5 rounded-xl bg-black/[0.04] dark:bg-white/[0.04] border border-black/[0.08] dark:border-white/[0.08] text-sm text-slate-700 dark:text-slate-300 placeholder-slate-400 dark:placeholder-slate-600 focus:outline-none focus:border-blue-500/50 transition-all duration-200"
-                    />
-                  </div>
-                  <div class="relative">
-                    <i
-                      class="ph ph-envelope-simple absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 dark:text-slate-500 text-sm pointer-events-none"
-                    ></i>
-                    <input
-                      type="email"
-                      placeholder="Email address"
-                      class="w-full pl-9 pr-4 py-2.5 rounded-xl bg-black/[0.04] dark:bg-white/[0.04] border border-black/[0.08] dark:border-white/[0.08] text-sm text-slate-700 dark:text-slate-300 placeholder-slate-400 dark:placeholder-slate-600 focus:outline-none focus:border-blue-500/50 transition-all duration-200"
-                    />
-                  </div>
-                  <div class="relative">
-                    <select
-                      class="w-full px-4 py-2.5 rounded-xl bg-black/[0.04] dark:bg-white/[0.04] border border-black/[0.08] dark:border-white/[0.08] text-sm text-slate-500 focus:outline-none focus:border-blue-500/50 transition-all duration-200 appearance-none cursor-pointer"
-                    >
-                      <option value="" disabled selected>
-                        Select a role...
-                      </option>
-                      <option>Full-Stack Developer</option>
-                      <option>Data Analyst</option>
-                      <option>UI/UX Engineer</option>
-                    </select>
-                    <i
-                      class="ph ph-caret-down absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 dark:text-slate-500 pointer-events-none text-sm"
-                    ></i>
-                  </div>
-                </div>
-              </div>
-              <div class="glass-card">
-                <h4
-                  class="text-xs font-bold text-slate-400 dark:text-slate-500 uppercase tracking-widest mb-5"
-                >
-                  Notification Toasts
-                </h4>
-                <div class="space-y-2">
-                  <div
-                    class="flex items-center gap-3 px-4 py-3 rounded-xl bg-blue-500/[0.07] dark:bg-blue-500/10 border border-blue-500/20"
-                  >
-                    <i
-                      class="ph ph-info text-blue-500 dark:text-blue-400 text-lg flex-shrink-0"
-                    ></i>
-                    <p
-                      class="text-xs text-slate-700 dark:text-slate-300 flex-1"
-                    >
-                      Your changes have been saved.
-                    </p>
-                    <i
-                      class="ph ph-x text-slate-400 cursor-pointer hover:text-slate-700 dark:hover:text-white text-sm transition-colors"
-                      onclick="this.closest('div').remove()"
-                    ></i>
-                  </div>
-                  <div
-                    class="flex items-center gap-3 px-4 py-3 rounded-xl bg-emerald-500/[0.07] dark:bg-emerald-500/10 border border-emerald-500/20"
-                  >
-                    <i
-                      class="ph ph-check-circle text-emerald-500 dark:text-emerald-400 text-lg flex-shrink-0"
-                    ></i>
-                    <p
-                      class="text-xs text-slate-700 dark:text-slate-300 flex-1"
-                    >
-                      Deployment successful!
-                    </p>
-                    <i
-                      class="ph ph-x text-slate-400 cursor-pointer hover:text-slate-700 dark:hover:text-white text-sm transition-colors"
-                      onclick="this.closest('div').remove()"
-                    ></i>
-                  </div>
-                  <div
-                    class="flex items-center gap-3 px-4 py-3 rounded-xl bg-red-500/[0.07] dark:bg-red-500/10 border border-red-500/20"
-                  >
-                    <i
-                      class="ph ph-x-circle text-red-500 dark:text-red-400 text-lg flex-shrink-0"
-                    ></i>
-                    <p
-                      class="text-xs text-slate-700 dark:text-slate-300 flex-1"
-                    >
-                      Connection failed. Please retry.
-                    </p>
-                    <i
-                      class="ph ph-x text-slate-400 cursor-pointer hover:text-slate-700 dark:hover:text-white text-sm transition-colors"
-                      onclick="this.closest('div').remove()"
-                    ></i>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Panel 2: Card Builder -->
-          <div id="panel-builder" class="hidden reveal">
-            <div class="grid lg:grid-cols-2 gap-8 items-start">
-              <div class="glass-card space-y-6">
-                <h4
-                  class="text-xs font-bold text-slate-400 dark:text-slate-500 uppercase tracking-widest"
-                >
-                  Adjust Properties
-                </h4>
-                <div class="space-y-1.5">
-                  <div class="flex justify-between text-sm">
-                    <label
-                      class="text-slate-500 dark:text-slate-400 font-medium"
-                      >Background Blur</label
-                    ><span
-                      id="blur-val"
-                      class="text-blue-500 dark:text-blue-400 font-mono font-bold"
-                      >12px</span
-                    >
-                  </div>
-                  <input
-                    id="slider-blur"
-                    type="range"
-                    min="0"
-                    max="40"
-                    value="12"
-                    class="craft-slider w-full"
-                  />
-                </div>
-                <div class="space-y-1.5">
-                  <div class="flex justify-between text-sm">
-                    <label
-                      class="text-slate-500 dark:text-slate-400 font-medium"
-                      >Background Opacity</label
-                    ><span
-                      id="bg-val"
-                      class="text-violet-500 dark:text-violet-400 font-mono font-bold"
-                      >5%</span
-                    >
-                  </div>
-                  <input
-                    id="slider-bg"
-                    type="range"
-                    min="0"
-                    max="40"
-                    value="5"
-                    class="craft-slider w-full"
-                  />
-                </div>
-                <div class="space-y-1.5">
-                  <div class="flex justify-between text-sm">
-                    <label
-                      class="text-slate-500 dark:text-slate-400 font-medium"
-                      >Border Opacity</label
-                    ><span
-                      id="border-val"
-                      class="text-emerald-500 dark:text-emerald-400 font-mono font-bold"
-                      >8%</span
-                    >
-                  </div>
-                  <input
-                    id="slider-border"
-                    type="range"
-                    min="0"
-                    max="40"
-                    value="8"
-                    class="craft-slider w-full"
-                  />
-                </div>
-                <div class="space-y-1.5">
-                  <div class="flex justify-between text-sm">
-                    <label
-                      class="text-slate-500 dark:text-slate-400 font-medium"
-                      >Border Radius</label
-                    ><span
-                      id="radius-val"
-                      class="text-blue-500 dark:text-blue-400 font-mono font-bold"
-                      >16px</span
-                    >
-                  </div>
-                  <input
-                    id="slider-radius"
-                    type="range"
-                    min="0"
-                    max="40"
-                    value="16"
-                    class="craft-slider w-full"
-                  />
-                </div>
-                <div class="space-y-1.5">
-                  <div class="flex justify-between text-sm">
-                    <label
-                      class="text-slate-500 dark:text-slate-400 font-medium"
-                      >Shadow Spread</label
-                    ><span
-                      id="shadow-val"
-                      class="text-violet-500 dark:text-violet-400 font-mono font-bold"
-                      >30</span
-                    >
-                  </div>
-                  <input
-                    id="slider-shadow"
-                    type="range"
-                    min="0"
-                    max="60"
-                    value="30"
-                    class="craft-slider w-full"
-                  />
+            <div class="glass-card absolute bottom-24 right-0 float-card" style="animation-delay: 0.8s">
+              <div class="flex items-center gap-3 px-5 py-4">
+                <div class="w-10 h-10 rounded-xl bg-blue-500/10 flex items-center justify-center flex-shrink-0">
+                  <i class="ph ph-folder-open text-blue-500 dark:text-blue-400 text-lg"></i>
                 </div>
                 <div>
-                  <label
-                    class="text-sm text-slate-500 dark:text-slate-400 font-medium block mb-3"
-                    >Accent Color</label
-                  >
-                  <div class="flex gap-2 flex-wrap">
-                    <button
-                      class="color-swatch w-8 h-8 rounded-lg bg-blue-500 transition-all ring-offset-2 ring-offset-white dark:ring-offset-zinc-950"
-                      data-color="#3b82f6"
-                    ></button>
-                    <button
-                      class="color-swatch w-8 h-8 rounded-lg bg-violet-500 transition-all ring-offset-2 ring-offset-white dark:ring-offset-zinc-950"
-                      data-color="#8b5cf6"
-                    ></button>
-                    <button
-                      class="color-swatch w-8 h-8 rounded-lg bg-emerald-500 transition-all ring-offset-2 ring-offset-white dark:ring-offset-zinc-950"
-                      data-color="#10b981"
-                    ></button>
-                    <button
-                      class="color-swatch w-8 h-8 rounded-lg bg-rose-500 transition-all ring-offset-2 ring-offset-white dark:ring-offset-zinc-950"
-                      data-color="#f43f5e"
-                    ></button>
-                    <button
-                      class="color-swatch w-8 h-8 rounded-lg bg-amber-500 transition-all ring-offset-2 ring-offset-white dark:ring-offset-zinc-950"
-                      data-color="#f59e0b"
-                    ></button>
-                    <button
-                      class="color-swatch w-8 h-8 rounded-lg bg-cyan-500 transition-all ring-offset-2 ring-offset-white dark:ring-offset-zinc-950"
-                      data-color="#06b6d4"
-                    ></button>
-                  </div>
+                  <p class="text-2xl font-black text-slate-900 dark:text-white leading-none">3+</p>
+                  <p class="text-xs text-slate-500 font-medium">Projects</p>
                 </div>
-              </div>
-              <div class="flex flex-col items-center gap-5">
-                <p
-                  class="text-xs text-slate-400 dark:text-slate-500 uppercase tracking-widest font-bold"
-                >
-                  Live Preview
-                </p>
-                <div
-                  id="builder-card"
-                  class="w-full max-w-sm p-6 transition-all duration-150"
-                  style="
-                    background: rgba(255, 255, 255, 0.05);
-                    border: 1px solid rgba(255, 255, 255, 0.08);
-                    border-radius: 16px;
-                    backdrop-filter: blur(12px);
-                    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
-                  "
-                >
-                  <div class="flex items-center gap-4 mb-5">
-                    <div
-                      id="builder-avatar"
-                      class="w-12 h-12 rounded-xl flex items-center justify-center text-white font-black text-lg flex-shrink-0"
-                      style="background-color: #3b82f6"
-                    >
-                      H
-                    </div>
-                    <div>
-                      <p class="font-bold text-slate-900 dark:text-white">
-                        Muhammad Hadi
-                      </p>
-                      <p class="text-sm text-slate-500">Full-Stack Developer</p>
-                    </div>
-                  </div>
-                  <p
-                    class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed mb-5"
-                  >
-                    Building interfaces that are both beautiful and functional —
-                    where design meets engineering.
-                  </p>
-                  <div class="flex gap-2">
-                    <button
-                      id="builder-btn"
-                      class="px-4 py-2 rounded-lg text-sm font-semibold text-white transition-all duration-150"
-                      style="background-color: #3b82f6"
-                    >
-                      Connect
-                    </button>
-                    <button
-                      class="px-4 py-2 rounded-lg text-sm font-semibold text-slate-500 dark:text-slate-400 bg-black/[0.04] dark:bg-white/5 border border-black/[0.08] dark:border-white/10"
-                    >
-                      View Profile
-                    </button>
-                  </div>
-                </div>
-                <p
-                  class="text-xs text-slate-400 dark:text-slate-600 text-center"
-                >
-                  Drag the sliders above to update the card in real time.
-                </p>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- PROJECTS -->
-      <section id="projects" class="py-16">
-        <div class="max-w-6xl mx-auto px-6">
-          <div class="reveal mb-12">
-            <span class="section-label text-blue-500 dark:text-blue-400">
-              <span class="w-8 h-px bg-blue-500 dark:bg-blue-400"></span>
-              What I've built
-            </span>
-            <h2 class="text-4xl font-black text-slate-900 dark:text-white mb-3">
-              Featured Projects
-            </h2>
-            <p class="text-slate-500 dark:text-slate-400 text-lg">
-              Practical applications of data analysis and software development.
-            </p>
-          </div>
-          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div class="glass-card project-card reveal flex flex-col">
-              <div class="flex justify-between items-start mb-6">
-                <div
-                  class="w-12 h-12 rounded-xl bg-blue-500/10 flex items-center justify-center"
-                >
-                  <i
-                    class="ph ph-robot text-blue-500 dark:text-blue-400 text-2xl"
-                  ></i>
+            <div class="glass-card absolute bottom-6 left-8 float-card" style="animation-delay: 1.5s">
+              <div class="flex items-center gap-3 px-5 py-4">
+                <div class="w-10 h-10 rounded-xl bg-violet-500/10 flex items-center justify-center flex-shrink-0">
+                  <i class="ph ph-briefcase text-violet-500 dark:text-violet-400 text-lg"></i>
                 </div>
-                <a
-                  href="https://github.com/mhdimrnhdi/formuhalal"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="w-8 h-8 flex items-center justify-center rounded-lg bg-black/[0.04] dark:bg-white/5 border border-black/[0.08] dark:border-white/10 text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-black/[0.08] dark:hover:bg-white/10 transition-all duration-200"
-                  aria-label="GitHub Repository"
-                >
-                  <i class="ph ph-github-logo"></i>
-                </a>
-              </div>
-              <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">
-                Formuhalal
-              </h3>
-              <p
-                class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed flex-grow mb-6"
-              >
-                AI-Powered Halal Ingredient Substitute and Supplier Verification
-                System. Engineered an ETL pipeline to scrape FDA/JAKIM databases
-                and integrated a multi-model AI layer (Gemini, OpenAI) via a
-                full-stack containerized architecture.
-              </p>
-              <div class="flex flex-wrap gap-2 mt-auto">
-                <span class="tech-chip">Python</span
-                ><span class="tech-chip">FastAPI</span
-                ><span class="tech-chip">Docker</span
-                ><span class="tech-chip">Gemini API</span
-                ><span class="tech-chip">ETL</span>
+                <div>
+                  <p class="text-2xl font-black text-slate-900 dark:text-white leading-none">6 mo</p>
+                  <p class="text-xs text-slate-500 font-medium">Internship</p>
+                </div>
               </div>
             </div>
-            <div
-              class="glass-card project-card reveal flex flex-col"
-              style="transition-delay: 0.1s"
-            >
-              <div class="flex justify-between items-start mb-6">
-                <div
-                  class="w-12 h-12 rounded-xl bg-emerald-500/10 flex items-center justify-center"
-                >
-                  <i
-                    class="ph ph-chart-bar text-emerald-500 dark:text-emerald-400 text-2xl"
-                  ></i>
+            <div class="glass-card absolute top-24 left-0 float-card" style="animation-delay: 1s">
+              <div class="flex items-center gap-3 px-5 py-4">
+                <div class="w-10 h-10 rounded-xl bg-emerald-500/10 flex items-center justify-center flex-shrink-0">
+                  <i class="ph ph-graduation-cap text-emerald-500 dark:text-emerald-400 text-lg"></i>
                 </div>
-              </div>
-              <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">
-                Music Streaming EDA
-              </h3>
-              <p
-                class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed flex-grow mb-6"
-              >
-                Performed Exploratory Data Analysis on music streaming datasets.
-                Conducted feature engineering and built interactive Tableau
-                dashboards to provide data-backed insights on user engagement
-                and song popularity.
-              </p>
-              <div class="flex flex-wrap gap-2 mt-auto">
-                <span class="tech-chip">Pandas</span
-                ><span class="tech-chip">Matplotlib</span
-                ><span class="tech-chip">Seaborn</span
-                ><span class="tech-chip">Tableau</span
-                ><span class="tech-chip">SAS</span>
-              </div>
-            </div>
-            <div
-              class="glass-card project-card reveal flex flex-col"
-              style="transition-delay: 0.2s"
-            >
-              <div class="flex justify-between items-start mb-6">
-                <div
-                  class="w-12 h-12 rounded-xl bg-violet-500/10 flex items-center justify-center"
-                >
-                  <i
-                    class="ph ph-device-mobile text-violet-500 dark:text-violet-400 text-2xl"
-                  ></i>
-                </div>
-              </div>
-              <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">
-                Bio-Growth Tracker
-              </h3>
-              <p
-                class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed flex-grow mb-6"
-              >
-                Developed a specialized mobile application module for tracking
-                biological growth data. Integrated Firebase Realtime Database
-                for synchronized cloud storage, data retrieval, and historical
-                CRUD tracking.
-              </p>
-              <div class="flex flex-wrap gap-2 mt-auto">
-                <span class="tech-chip">Java</span
-                ><span class="tech-chip">Android Studio</span
-                ><span class="tech-chip">Firebase</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- EXPERIENCE -->
-      <section id="experience" class="py-16">
-        <div class="max-w-6xl mx-auto px-6">
-          <div class="reveal mb-12">
-            <span class="section-label text-blue-500 dark:text-blue-400">
-              <span class="w-8 h-px bg-blue-500 dark:bg-blue-400"></span>
-              Where I've worked
-            </span>
-            <h2 class="text-4xl font-black text-slate-900 dark:text-white mb-3">
-              Professional Experience
-            </h2>
-            <p class="text-slate-500 dark:text-slate-400 text-lg">
-              My journey in the tech industry.
-            </p>
-          </div>
-          <div class="max-w-3xl">
-            <div class="relative reveal">
-              <div
-                class="absolute left-3 top-6 bottom-0 w-px bg-black/[0.06] dark:bg-white/[0.06]"
-              ></div>
-              <div class="pl-12 relative">
-                <div
-                  class="absolute left-0 top-4 w-7 h-7 rounded-full bg-white dark:bg-zinc-950 border-2 border-blue-500 flex items-center justify-center"
-                >
-                  <div
-                    class="w-2.5 h-2.5 rounded-full bg-blue-500 animate-pulse"
-                  ></div>
-                </div>
-                <div class="glass-card">
-                  <div
-                    class="flex flex-wrap items-start justify-between gap-3 mb-5"
-                  >
-                    <div>
-                      <h3
-                        class="text-lg font-bold text-slate-900 dark:text-white"
-                      >
-                        Full Stack Software Development Intern
-                      </h3>
-                      <p
-                        class="text-blue-500 dark:text-blue-400 font-semibold text-sm mt-0.5"
-                      >
-                        Applied Accounting Solutions, Bangsar
-                      </p>
-                    </div>
-                    <span
-                      class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-blue-500/10 border border-blue-500/20 text-blue-600 dark:text-blue-400 flex-shrink-0"
-                      >2025 – 2026 &middot; 6 months</span
-                    >
-                  </div>
-                  <ul class="space-y-2.5">
-                    <li
-                      class="flex items-start gap-2.5 text-sm text-slate-500 dark:text-slate-400"
-                    >
-                      <i
-                        class="ph ph-caret-right text-blue-500 dark:text-blue-400 flex-shrink-0 mt-0.5"
-                      ></i
-                      >Collaborated to develop a comprehensive ERP/POS system
-                      tailored for an accounting firm.
-                    </li>
-                    <li
-                      class="flex items-start gap-2.5 text-sm text-slate-500 dark:text-slate-400"
-                    >
-                      <i
-                        class="ph ph-caret-right text-blue-500 dark:text-blue-400 flex-shrink-0 mt-0.5"
-                      ></i
-                      >Engineered frontend and backend modules for seamless
-                      end-to-end data flow.
-                    </li>
-                    <li
-                      class="flex items-start gap-2.5 text-sm text-slate-500 dark:text-slate-400"
-                    >
-                      <i
-                        class="ph ph-caret-right text-blue-500 dark:text-blue-400 flex-shrink-0 mt-0.5"
-                      ></i
-                      >Designed and managed relational database structures to
-                      maintain data integrity for financial transactions.
-                    </li>
-                    <li
-                      class="flex items-start gap-2.5 text-sm text-slate-500 dark:text-slate-400"
-                    >
-                      <i
-                        class="ph ph-caret-right text-blue-500 dark:text-blue-400 flex-shrink-0 mt-0.5"
-                      ></i
-                      >Executed end-to-end software testing and UI/UX
-                      refinements across multiple modules.
-                    </li>
-                  </ul>
+                <div>
+                  <p class="text-sm font-black text-slate-900 dark:text-white leading-tight">CS Graduate</p>
+                  <p class="text-xs text-slate-500 font-medium">Class of 2025</p>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      </section>
-
-      <!-- CONTACT -->
-      <section id="contact" class="py-16">
-        <div class="max-w-6xl mx-auto px-6">
-          <div class="reveal mb-12">
-            <span class="section-label text-blue-500 dark:text-blue-400">
-              <span class="w-8 h-px bg-blue-500 dark:bg-blue-400"></span>
-              Say hello
-            </span>
-            <h2 class="text-4xl font-black text-slate-900 dark:text-white mb-3">
-              Get In Touch
-            </h2>
-            <p class="text-slate-500 dark:text-slate-400 text-lg max-w-xl">
-              I'm currently looking for new opportunities in data analytics and
-              software engineering. My inbox is always open.
-            </p>
-          </div>
-          <div class="max-w-3xl reveal">
-            <div class="glass-card">
-              <div
-                class="w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-500/20 to-violet-500/20 flex items-center justify-center mb-6"
-              >
-                <i
-                  class="ph ph-paper-plane-tilt text-blue-500 dark:text-blue-400 text-3xl"
-                ></i>
-              </div>
-              <h3
-                class="text-2xl font-bold text-slate-900 dark:text-white mb-2"
-              >
-                Let's Connect
-              </h3>
-              <p class="text-slate-500 dark:text-slate-400 mb-8">
-                Whether it's a job opportunity, a collaboration, or just a chat.
-              </p>
-              <div class="grid sm:grid-cols-2 gap-3">
-                <a href="tel:+60108115539" class="contact-link group">
-                  <div
-                    class="w-10 h-10 rounded-xl bg-blue-500/10 flex items-center justify-center flex-shrink-0 group-hover:bg-blue-500/20 transition-colors duration-200"
-                  >
-                    <i class="ph ph-phone text-blue-500 dark:text-blue-400"></i>
-                  </div>
-                  <div>
-                    <p
-                      class="text-xs text-slate-400 font-bold uppercase tracking-wider"
-                    >
-                      Phone
-                    </p>
-                    <p
-                      class="text-slate-700 dark:text-slate-200 font-medium text-sm"
-                    >
-                      +60 10-811 5539
-                    </p>
-                  </div>
-                </a>
-                <a
-                  href="mailto:hadikayell@gmail.com"
-                  class="contact-link group"
-                >
-                  <div
-                    class="w-10 h-10 rounded-xl bg-blue-500/10 flex items-center justify-center flex-shrink-0 group-hover:bg-blue-500/20 transition-colors duration-200"
-                  >
-                    <i
-                      class="ph ph-envelope-simple text-blue-500 dark:text-blue-400"
-                    ></i>
-                  </div>
-                  <div>
-                    <p
-                      class="text-xs text-slate-400 font-bold uppercase tracking-wider"
-                    >
-                      Email
-                    </p>
-                    <p
-                      class="text-slate-700 dark:text-slate-200 font-medium text-sm"
-                    >
-                      hadikayell@gmail.com
-                    </p>
-                  </div>
-                </a>
-                <a
-                  href="https://github.com/mhdimrnhdi"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="contact-link group"
-                >
-                  <div
-                    class="w-10 h-10 rounded-xl bg-blue-500/10 flex items-center justify-center flex-shrink-0 group-hover:bg-blue-500/20 transition-colors duration-200"
-                  >
-                    <i
-                      class="ph ph-github-logo text-blue-500 dark:text-blue-400"
-                    ></i>
-                  </div>
-                  <div>
-                    <p
-                      class="text-xs text-slate-400 font-bold uppercase tracking-wider"
-                    >
-                      GitHub
-                    </p>
-                    <p
-                      class="text-slate-700 dark:text-slate-200 font-medium text-sm"
-                    >
-                      mhdimrnhdi
-                    </p>
-                  </div>
-                </a>
-                <a
-                  href="https://linkedin.com/in/imranhadikhairi"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="contact-link group"
-                >
-                  <div
-                    class="w-10 h-10 rounded-xl bg-blue-500/10 flex items-center justify-center flex-shrink-0 group-hover:bg-blue-500/20 transition-colors duration-200"
-                  >
-                    <i
-                      class="ph ph-linkedin-logo text-blue-500 dark:text-blue-400"
-                    ></i>
-                  </div>
-                  <div>
-                    <p
-                      class="text-xs text-slate-400 font-bold uppercase tracking-wider"
-                    >
-                      LinkedIn
-                    </p>
-                    <p
-                      class="text-slate-700 dark:text-slate-200 font-medium text-sm"
-                    >
-                      imranhadikhairi
-                    </p>
-                  </div>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <footer class="border-t border-black/[0.05] dark:border-white/[0.05] py-8">
-      <div
-        class="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4"
-      >
-        <p class="text-slate-400 dark:text-slate-500 text-sm">
-          © 2026 Muhammad Imran Hadi. Built with Vite + Tailwind CSS.
-        </p>
-        <div class="flex gap-4">
-          <a
-            href="https://github.com/mhdimrnhdi"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors duration-200"
-            ><i class="ph ph-github-logo text-lg"></i
-          ></a>
-          <a
-            href="https://linkedin.com/in/imranhadikhairi"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="text-slate-400 hover:text-blue-500 transition-colors duration-200"
-            ><i class="ph ph-linkedin-logo text-lg"></i
-          ></a>
-          <a
-            href="mailto:hadikayell@gmail.com"
-            class="text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors duration-200"
-            ><i class="ph ph-envelope-simple text-lg"></i
-          ></a>
         </div>
       </div>
-    </footer>
+    </section>
 
-    <script type="module" src="/src/main.js"></script>
-  </body>
+    <!-- SKILLS -->
+    <section id="skills" class="py-16">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="reveal mb-12">
+          <span class="section-label text-blue-500 dark:text-blue-400">
+            <span class="w-8 h-px bg-blue-500 dark:bg-blue-400"></span>
+            What I work with
+          </span>
+          <h2 class="text-4xl font-black text-slate-900 dark:text-white mb-3">Technical Expertise</h2>
+          <p class="text-slate-500 dark:text-slate-400 text-lg">Bridging the gap between software engineering and data
+            analytics.</p>
+        </div>
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="glass-card reveal">
+            <div class="flex items-center gap-2 mb-2">
+              <div class="w-8 h-8 rounded-lg bg-emerald-500/10 flex items-center justify-center">
+                <i class="ph ph-chart-line-up text-emerald-500 dark:text-emerald-400"></i>
+              </div>
+              <h3 class="text-base font-bold text-slate-900 dark:text-white">Data Analytics & AI</h3>
+            </div>
+            <p class="text-slate-500 text-sm mb-5">My primary focus and strongest passion.</p>
+            <div class="flex flex-wrap gap-2">
+              <span class="skill-chip">Pandas</span>
+              <span class="skill-chip">Tableau</span>
+              <span class="skill-chip">PowerBI</span>
+              <span class="skill-chip">ETL Pipelines</span>
+              <span class="skill-chip">LLM Integration</span>
+              <span class="skill-chip">Gemini API</span>
+              <span class="skill-chip">OpenAI API</span>
+              <span class="skill-chip">Ollama</span>
+              <span class="skill-chip">Web Scraping</span>
+            </div>
+          </div>
+          <div class="glass-card reveal" style="transition-delay: 0.1s">
+            <div class="flex items-center gap-2 mb-2">
+              <div class="w-8 h-8 rounded-lg bg-blue-500/10 flex items-center justify-center">
+                <i class="ph ph-code text-blue-500 dark:text-blue-400"></i>
+              </div>
+              <h3 class="text-base font-bold text-slate-900 dark:text-white">Full-Stack Engineering</h3>
+            </div>
+            <p class="text-slate-500 text-sm mb-5">Building scalable web applications and APIs.</p>
+            <div class="flex flex-wrap gap-2">
+              <span class="skill-chip">Python</span>
+              <span class="skill-chip">TypeScript / JavaScript</span>
+              <span class="skill-chip">SQL</span>
+              <span class="skill-chip">Java</span>
+              <span class="skill-chip">FastAPI</span>
+              <span class="skill-chip">Docker</span>
+              <span class="skill-chip">Tailwind CSS</span>
+              <span class="skill-chip">Firebase</span>
+              <span class="skill-chip">Git / GitHub</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- UI CRAFTSMANSHIP -->
+    <section id="craft" class="py-16">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="reveal mb-12">
+          <span class="section-label text-violet-500 dark:text-violet-400">
+            <span class="w-8 h-px bg-violet-500 dark:bg-violet-400"></span>
+            Live demo
+          </span>
+          <h2 class="text-4xl font-black text-slate-900 dark:text-white mb-3">UI Craftsmanship</h2>
+          <p class="text-slate-500 dark:text-slate-400 text-lg">Frontend isn't just functional — it's felt. Interact
+            with the components below.</p>
+        </div>
+
+        <!-- Tabs -->
+        <div
+          class="reveal flex gap-1 mb-8 p-1 bg-black/[0.04] dark:bg-white/[0.03] border border-black/[0.06] dark:border-white/[0.06] rounded-xl w-fit">
+          <button id="tab-gallery-btn"
+            class="craft-tab active-tab px-5 py-2.5 rounded-lg text-sm font-semibold transition-all duration-200">
+            <i class="ph ph-squares-four mr-1.5"></i>
+            Component Gallery
+          </button>
+          <button id="tab-builder-btn"
+            class="craft-tab px-5 py-2.5 rounded-lg text-sm font-semibold text-slate-500 hover:text-slate-900 dark:hover:text-white transition-all duration-200">
+            <i class="ph ph-sliders-horizontal mr-1.5"></i>
+            Card Builder
+          </button>
+        </div>
+
+        <!-- Panel 1: Component Gallery -->
+        <div id="panel-gallery" class="space-y-5 reveal">
+          <!-- Buttons -->
+          <div class="glass-card">
+            <h4 class="text-xs font-bold text-slate-400 dark:text-slate-500 uppercase tracking-widest mb-5">Button
+              Variants</h4>
+            <div class="flex flex-wrap gap-3 items-center">
+              <button
+                class="px-5 py-2.5 rounded-xl font-semibold text-white text-sm bg-gradient-to-r from-blue-500 to-violet-500 hover:from-blue-600 hover:to-violet-600 shadow-lg shadow-blue-500/20 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-blue-500/40 active:scale-95">Primary</button>
+              <button
+                class="px-5 py-2.5 rounded-xl font-semibold text-sm text-slate-700 dark:text-slate-300 border border-black/10 dark:border-white/10 hover:bg-black/[0.04] dark:hover:bg-white/5 transition-all duration-200 hover:-translate-y-0.5 active:scale-95">Outline</button>
+              <button
+                class="px-5 py-2.5 rounded-xl font-semibold text-sm text-slate-500 hover:text-slate-900 dark:hover:text-white hover:bg-black/[0.04] dark:hover:bg-white/5 transition-all duration-200 active:scale-95">Ghost</button>
+              <button
+                class="px-5 py-2.5 rounded-xl font-semibold text-white text-sm bg-emerald-500 hover:bg-emerald-600 shadow-lg shadow-emerald-500/20 transition-all duration-200 hover:-translate-y-0.5 active:scale-95">Success</button>
+              <button
+                class="px-5 py-2.5 rounded-xl font-semibold text-white text-sm bg-red-500 hover:bg-red-600 shadow-lg shadow-red-500/20 transition-all duration-200 hover:-translate-y-0.5 active:scale-95">Danger</button>
+              <button
+                class="px-5 py-2.5 rounded-xl font-semibold text-sm text-violet-600 dark:text-violet-300 bg-violet-500/10 border border-violet-500/20 hover:bg-violet-500/20 transition-all duration-200 hover:-translate-y-0.5 active:scale-95">Subtle</button>
+              <button
+                class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl font-semibold text-sm text-slate-700 dark:text-slate-300 border border-black/10 dark:border-white/10 hover:bg-black/[0.04] dark:hover:bg-white/5 transition-all duration-200 active:scale-95">
+                <i class="ph ph-arrow-clockwise animate-spin" style="animation-duration: 1.5s"></i>
+                Loading
+              </button>
+            </div>
+          </div>
+
+          <!-- Badges + Toggles + Spinners -->
+          <div class="grid md:grid-cols-3 gap-5">
+            <div class="glass-card">
+              <h4 class="text-xs font-bold text-slate-400 dark:text-slate-500 uppercase tracking-widest mb-5">Badge
+                System</h4>
+              <div class="flex flex-wrap gap-2">
+                <span
+                  class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-blue-500/10 text-blue-600 dark:text-blue-400 border border-blue-500/20">
+                  <span class="w-1.5 h-1.5 rounded-full bg-blue-500 dark:bg-blue-400"></span>
+                  Default
+                </span>
+                <span
+                  class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20">
+                  <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 dark:bg-emerald-400 animate-pulse"></span>
+                  Live
+                </span>
+                <span
+                  class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-amber-500/10 text-amber-600 dark:text-amber-400 border border-amber-500/20">
+                  <span class="w-1.5 h-1.5 rounded-full bg-amber-500 dark:bg-amber-400"></span>
+                  Pending
+                </span>
+                <span
+                  class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-red-500/10 text-red-600 dark:text-red-400 border border-red-500/20">
+                  <span class="w-1.5 h-1.5 rounded-full bg-red-500 dark:bg-red-400"></span>
+                  Error
+                </span>
+                <span
+                  class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-violet-500/10 text-violet-600 dark:text-violet-400 border border-violet-500/20">
+                  <span class="w-1.5 h-1.5 rounded-full bg-violet-500 dark:bg-violet-400"></span>
+                  Beta
+                </span>
+                <span
+                  class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-black/[0.04] dark:bg-white/5 text-slate-500 border border-black/[0.08] dark:border-white/10">Neutral</span>
+              </div>
+            </div>
+            <div class="glass-card">
+              <h4 class="text-xs font-bold text-slate-400 dark:text-slate-500 uppercase tracking-widest mb-5">Toggle
+                Switches</h4>
+              <div class="space-y-4">
+                <div class="flex items-center justify-between cursor-pointer"
+                  onclick="this.querySelector('.toggle-switch').classList.toggle('active')">
+                  <span class="text-sm text-slate-600 dark:text-slate-300 select-none">Notifications</span>
+                  <div class="toggle-switch active">
+                    <div class="toggle-knob"></div>
+                  </div>
+                </div>
+                <div class="flex items-center justify-between cursor-pointer"
+                  onclick="this.querySelector('.toggle-switch').classList.toggle('active')">
+                  <span class="text-sm text-slate-600 dark:text-slate-300 select-none">Analytics</span>
+                  <div class="toggle-switch">
+                    <div class="toggle-knob"></div>
+                  </div>
+                </div>
+                <div class="flex items-center justify-between cursor-pointer"
+                  onclick="this.querySelector('.toggle-switch').classList.toggle('active')">
+                  <span class="text-sm text-slate-600 dark:text-slate-300 select-none">Auto-deploy</span>
+                  <div class="toggle-switch active">
+                    <div class="toggle-knob"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="glass-card">
+              <h4 class="text-xs font-bold text-slate-400 dark:text-slate-500 uppercase tracking-widest mb-5">Loading
+                States</h4>
+              <div class="flex items-center gap-6 mb-5">
+                <div
+                  class="w-8 h-8 rounded-full border-2 border-black/10 dark:border-white/10 border-t-blue-500 animate-spin">
+                </div>
+                <div class="flex gap-1.5">
+                  <div class="w-2 h-2 rounded-full bg-violet-500 animate-bounce" style="animation-delay: 0s"></div>
+                  <div class="w-2 h-2 rounded-full bg-violet-500 animate-bounce" style="animation-delay: 0.15s"></div>
+                  <div class="w-2 h-2 rounded-full bg-violet-500 animate-bounce" style="animation-delay: 0.3s"></div>
+                </div>
+                <div class="relative w-8 h-8 flex-shrink-0">
+                  <div class="absolute inset-0 rounded-full bg-emerald-500/30 animate-ping"></div>
+                  <div class="relative w-8 h-8 rounded-full bg-emerald-500/40 flex items-center justify-center">
+                    <div class="w-3 h-3 rounded-full bg-emerald-500"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="space-y-2">
+                <div class="h-2.5 rounded-full bg-black/[0.04] dark:bg-white/[0.04] skeleton-shimmer w-full"></div>
+                <div class="h-2.5 rounded-full bg-black/[0.04] dark:bg-white/[0.04] skeleton-shimmer w-4/5"></div>
+                <div class="h-2.5 rounded-full bg-black/[0.04] dark:bg-white/[0.04] skeleton-shimmer w-2/3"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Form inputs + Toasts -->
+          <div class="grid md:grid-cols-2 gap-5">
+            <div class="glass-card">
+              <h4 class="text-xs font-bold text-slate-400 dark:text-slate-500 uppercase tracking-widest mb-5">Form
+                Elements</h4>
+              <div class="space-y-3">
+                <div class="relative">
+                  <i
+                    class="ph ph-user absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 dark:text-slate-500 text-sm pointer-events-none"></i>
+                  <input type="text" placeholder="Full name"
+                    class="w-full pl-9 pr-4 py-2.5 rounded-xl bg-black/[0.04] dark:bg-white/[0.04] border border-black/[0.08] dark:border-white/[0.08] text-sm text-slate-700 dark:text-slate-300 placeholder-slate-400 dark:placeholder-slate-600 focus:outline-none focus:border-blue-500/50 transition-all duration-200" />
+                </div>
+                <div class="relative">
+                  <i
+                    class="ph ph-envelope-simple absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 dark:text-slate-500 text-sm pointer-events-none"></i>
+                  <input type="email" placeholder="Email address"
+                    class="w-full pl-9 pr-4 py-2.5 rounded-xl bg-black/[0.04] dark:bg-white/[0.04] border border-black/[0.08] dark:border-white/[0.08] text-sm text-slate-700 dark:text-slate-300 placeholder-slate-400 dark:placeholder-slate-600 focus:outline-none focus:border-blue-500/50 transition-all duration-200" />
+                </div>
+                <div class="relative">
+                  <select
+                    class="w-full px-4 py-2.5 rounded-xl bg-black/[0.04] dark:bg-white/[0.04] border border-black/[0.08] dark:border-white/[0.08] text-sm text-slate-500 focus:outline-none focus:border-blue-500/50 transition-all duration-200 appearance-none cursor-pointer">
+                    <option value="" disabled selected>Select a role...</option>
+                    <option>Full-Stack Developer</option>
+                    <option>Data Analyst</option>
+                    <option>UI/UX Engineer</option>
+                  </select>
+                  <i
+                    class="ph ph-caret-down absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 dark:text-slate-500 pointer-events-none text-sm"></i>
+                </div>
+              </div>
+            </div>
+            <div class="glass-card">
+              <h4 class="text-xs font-bold text-slate-400 dark:text-slate-500 uppercase tracking-widest mb-5">
+                Notification Toasts</h4>
+              <div class="space-y-2">
+                <div
+                  class="flex items-center gap-3 px-4 py-3 rounded-xl bg-blue-500/[0.07] dark:bg-blue-500/10 border border-blue-500/20">
+                  <i class="ph ph-info text-blue-500 dark:text-blue-400 text-lg flex-shrink-0"></i>
+                  <p class="text-xs text-slate-700 dark:text-slate-300 flex-1">Your changes have been saved.</p>
+                  <i class="ph ph-x text-slate-400 cursor-pointer hover:text-slate-700 dark:hover:text-white text-sm transition-colors"
+                    onclick="this.closest('div').remove()"></i>
+                </div>
+                <div
+                  class="flex items-center gap-3 px-4 py-3 rounded-xl bg-emerald-500/[0.07] dark:bg-emerald-500/10 border border-emerald-500/20">
+                  <i class="ph ph-check-circle text-emerald-500 dark:text-emerald-400 text-lg flex-shrink-0"></i>
+                  <p class="text-xs text-slate-700 dark:text-slate-300 flex-1">Deployment successful!</p>
+                  <i class="ph ph-x text-slate-400 cursor-pointer hover:text-slate-700 dark:hover:text-white text-sm transition-colors"
+                    onclick="this.closest('div').remove()"></i>
+                </div>
+                <div
+                  class="flex items-center gap-3 px-4 py-3 rounded-xl bg-red-500/[0.07] dark:bg-red-500/10 border border-red-500/20">
+                  <i class="ph ph-x-circle text-red-500 dark:text-red-400 text-lg flex-shrink-0"></i>
+                  <p class="text-xs text-slate-700 dark:text-slate-300 flex-1">Connection failed. Please retry.</p>
+                  <i class="ph ph-x text-slate-400 cursor-pointer hover:text-slate-700 dark:hover:text-white text-sm transition-colors"
+                    onclick="this.closest('div').remove()"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Panel 2: Card Builder -->
+        <div id="panel-builder" class="hidden reveal">
+          <div class="grid lg:grid-cols-2 gap-8 items-start">
+            <div class="glass-card space-y-6">
+              <h4 class="text-xs font-bold text-slate-400 dark:text-slate-500 uppercase tracking-widest">Adjust
+                Properties</h4>
+              <div class="space-y-1.5">
+                <div class="flex justify-between text-sm">
+                  <label class="text-slate-500 dark:text-slate-400 font-medium">Background Blur</label>
+                  <span id="blur-val" class="text-blue-500 dark:text-blue-400 font-mono font-bold">12px</span>
+                </div>
+                <input id="slider-blur" type="range" min="0" max="40" value="12" class="craft-slider w-full" />
+              </div>
+              <div class="space-y-1.5">
+                <div class="flex justify-between text-sm">
+                  <label class="text-slate-500 dark:text-slate-400 font-medium">Background Opacity</label>
+                  <span id="bg-val" class="text-violet-500 dark:text-violet-400 font-mono font-bold">5%</span>
+                </div>
+                <input id="slider-bg" type="range" min="0" max="40" value="5" class="craft-slider w-full" />
+              </div>
+              <div class="space-y-1.5">
+                <div class="flex justify-between text-sm">
+                  <label class="text-slate-500 dark:text-slate-400 font-medium">Border Opacity</label>
+                  <span id="border-val" class="text-emerald-500 dark:text-emerald-400 font-mono font-bold">8%</span>
+                </div>
+                <input id="slider-border" type="range" min="0" max="40" value="8" class="craft-slider w-full" />
+              </div>
+              <div class="space-y-1.5">
+                <div class="flex justify-between text-sm">
+                  <label class="text-slate-500 dark:text-slate-400 font-medium">Border Radius</label>
+                  <span id="radius-val" class="text-blue-500 dark:text-blue-400 font-mono font-bold">16px</span>
+                </div>
+                <input id="slider-radius" type="range" min="0" max="40" value="16" class="craft-slider w-full" />
+              </div>
+              <div class="space-y-1.5">
+                <div class="flex justify-between text-sm">
+                  <label class="text-slate-500 dark:text-slate-400 font-medium">Shadow Spread</label>
+                  <span id="shadow-val" class="text-violet-500 dark:text-violet-400 font-mono font-bold">30</span>
+                </div>
+                <input id="slider-shadow" type="range" min="0" max="60" value="30" class="craft-slider w-full" />
+              </div>
+              <div>
+                <label class="text-sm text-slate-500 dark:text-slate-400 font-medium block mb-3">Accent Color</label>
+                <div class="flex gap-2 flex-wrap">
+                  <button
+                    class="color-swatch w-8 h-8 rounded-lg bg-blue-500 transition-all ring-offset-2 ring-offset-white dark:ring-offset-zinc-950"
+                    data-color="#3b82f6"></button>
+                  <button
+                    class="color-swatch w-8 h-8 rounded-lg bg-violet-500 transition-all ring-offset-2 ring-offset-white dark:ring-offset-zinc-950"
+                    data-color="#8b5cf6"></button>
+                  <button
+                    class="color-swatch w-8 h-8 rounded-lg bg-emerald-500 transition-all ring-offset-2 ring-offset-white dark:ring-offset-zinc-950"
+                    data-color="#10b981"></button>
+                  <button
+                    class="color-swatch w-8 h-8 rounded-lg bg-rose-500 transition-all ring-offset-2 ring-offset-white dark:ring-offset-zinc-950"
+                    data-color="#f43f5e"></button>
+                  <button
+                    class="color-swatch w-8 h-8 rounded-lg bg-amber-500 transition-all ring-offset-2 ring-offset-white dark:ring-offset-zinc-950"
+                    data-color="#f59e0b"></button>
+                  <button
+                    class="color-swatch w-8 h-8 rounded-lg bg-cyan-500 transition-all ring-offset-2 ring-offset-white dark:ring-offset-zinc-950"
+                    data-color="#06b6d4"></button>
+                </div>
+              </div>
+            </div>
+            <div class="flex flex-col items-center gap-5">
+              <p class="text-xs text-slate-400 dark:text-slate-500 uppercase tracking-widest font-bold">Live Preview</p>
+              <div id="builder-card" class="w-full max-w-sm p-6 transition-all duration-150"
+                style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 16px; backdrop-filter: blur(12px); box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3)">
+                <div class="flex items-center gap-4 mb-5">
+                  <div id="builder-avatar"
+                    class="w-12 h-12 rounded-xl flex items-center justify-center text-white font-black text-lg flex-shrink-0"
+                    style="background-color: #3b82f6">H</div>
+                  <div>
+                    <p class="font-bold text-slate-900 dark:text-white">Muhammad Hadi</p>
+                    <p class="text-sm text-slate-500">Full-Stack Developer</p>
+                  </div>
+                </div>
+                <p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed mb-5">Building interfaces that are
+                  both beautiful and functional — where design meets engineering.</p>
+                <div class="flex gap-2">
+                  <button id="builder-btn"
+                    class="px-4 py-2 rounded-lg text-sm font-semibold text-white transition-all duration-150"
+                    style="background-color: #3b82f6">Connect</button>
+                  <button
+                    class="px-4 py-2 rounded-lg text-sm font-semibold text-slate-500 dark:text-slate-400 bg-black/[0.04] dark:bg-white/5 border border-black/[0.08] dark:border-white/10">View
+                    Profile</button>
+                </div>
+              </div>
+              <p class="text-xs text-slate-400 dark:text-slate-600 text-center">Drag the sliders above to update the
+                card in real time.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="py-16">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="reveal mb-12">
+          <span class="section-label text-blue-500 dark:text-blue-400">
+            <span class="w-8 h-px bg-blue-500 dark:bg-blue-400"></span>
+            What I've built
+          </span>
+          <h2 class="text-4xl font-black text-slate-900 dark:text-white mb-3">Featured Projects</h2>
+          <p class="text-slate-500 dark:text-slate-400 text-lg">Practical applications of data analysis and software
+            development.</p>
+        </div>
+        <div class="flex gap-6 overflow-x-auto pb-8 snap-x snap-mandatory scroll-smooth w-full items-stretch">
+          <div class="glass-card project-card reveal flex flex-col w-[85vw] sm:w-[350px] shrink-0 snap-start">
+            <div class="flex justify-between items-start mb-6">
+              <div class="w-12 h-12 rounded-xl bg-blue-500/10 flex items-center justify-center">
+                <i class="ph ph-robot text-blue-500 dark:text-blue-400 text-2xl"></i>
+              </div>
+              <a href="https://github.com/mhdimrnhdi/formuhalal" target="_blank" rel="noopener noreferrer"
+                class="w-8 h-8 flex items-center justify-center rounded-lg bg-black/[0.04] dark:bg-white/5 border border-black/[0.08] dark:border-white/10 text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-black/[0.08] dark:hover:bg-white/10 transition-all duration-200"
+                aria-label="GitHub Repository">
+                <i class="ph ph-github-logo"></i>
+              </a>
+            </div>
+            <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">Formuhalal</h3>
+            <p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed flex-grow mb-6">AI-Powered Halal
+              Ingredient Substitute and Supplier Verification System. Engineered an ETL pipeline to scrape FDA/JAKIM
+              databases and integrated a multi-model AI layer (Gemini, OpenAI) via a full-stack containerized
+              architecture.</p>
+            <div class="flex flex-wrap gap-2 mt-auto">
+              <span class="tech-chip">Python</span>
+              <span class="tech-chip">HTML</span>
+              <span class="tech-chip">FastAPI</span>
+              <span class="tech-chip">Docker</span>
+              <span class="tech-chip">Tailwind</span>
+              <span class="tech-chip">Gemini API</span>
+              <span class="tech-chip">ETL</span>
+              <span class="tech-chip">Railway</span>
+            </div>
+          </div>
+          <div class="glass-card project-card reveal flex flex-col w-[85vw] sm:w-[350px] shrink-0 snap-start"
+            style="transition-delay: 0.1s">
+            <div class="flex justify-between items-start mb-6">
+              <div class="w-12 h-12 rounded-xl bg-rose-500/10 flex items-center justify-center">
+                <i class="ph ph-users text-rose-500 dark:text-rose-400 text-2xl"></i>
+              </div>
+              <a href="https://github.com/mhdimrnhdi/Telco-Customer-Churn-Prediction/" target="_blank"
+                rel="noopener noreferrer"
+                class="w-8 h-8 flex items-center justify-center rounded-lg bg-black/[0.04] dark:bg-white/5 border border-black/[0.08] dark:border-white/10 text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-black/[0.08] dark:hover:bg-white/10 transition-all duration-200"
+                aria-label="GitHub Repository">
+                <i class="ph ph-github-logo"></i>
+              </a>
+            </div>
+            <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">Telco Customer Churn Analysis</h3>
+            <p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed flex-grow mb-6">An end-to-end churn
+              analysis on a 7,000+ telecom customer dataset. Combines EDA, data quality diagnostics, and Random Forest
+              modeling to surface the hidden multivariate factors that drive customer attrition.</p>
+            <div class="flex flex-wrap gap-2 mt-auto">
+              <span class="tech-chip">Python</span>
+              <span class="tech-chip">Pandas</span>
+              <span class="tech-chip">Matplotlib</span>
+              <span class="tech-chip">Scikit-Learn</span>
+              <span class="tech-chip">Seaborn</span>
+              <span class="tech-chip">Jupyter</span>
+            </div>
+          </div>
+          <div class="glass-card project-card reveal flex flex-col w-[85vw] sm:w-[350px] shrink-0 snap-start"
+            style="transition-delay: 0.2s">
+            <div class="flex justify-between items-start mb-6">
+              <div class="w-12 h-12 rounded-xl bg-emerald-500/10 flex items-center justify-center">
+                <i class="ph ph-chart-bar text-emerald-500 dark:text-emerald-400 text-2xl"></i>
+              </div>
+            </div>
+            <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">Music Streaming EDA</h3>
+            <p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed flex-grow mb-6">Performed Exploratory
+              Data Analysis on music streaming datasets. Conducted feature engineering and built interactive Tableau
+              dashboards to provide data-backed insights on user engagement and song popularity.</p>
+            <div class="flex flex-wrap gap-2 mt-auto">
+              <span class="tech-chip">Pandas</span>
+              <span class="tech-chip">Matplotlib</span>
+              <span class="tech-chip">Seaborn</span>
+              <span class="tech-chip">Tableau</span>
+              <span class="tech-chip">SAS</span>
+            </div>
+          </div>
+          <div class="glass-card project-card reveal flex flex-col w-[85vw] sm:w-[350px] shrink-0 snap-start"
+            style="transition-delay: 0.3s">
+            <div class="flex justify-between items-start mb-6">
+              <div class="w-12 h-12 rounded-xl bg-violet-500/10 flex items-center justify-center">
+                <i class="ph ph-device-mobile text-violet-500 dark:text-violet-400 text-2xl"></i>
+              </div>
+            </div>
+            <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">Bio-Growth Tracker</h3>
+            <p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed flex-grow mb-6">Developed a specialized
+              mobile application module for tracking biological growth data. Integrated Firebase Realtime Database for
+              synchronized cloud storage, data retrieval, and historical CRUD tracking.</p>
+            <div class="flex flex-wrap gap-2 mt-auto">
+              <span class="tech-chip">Java</span>
+              <span class="tech-chip">Android Studio</span>
+              <span class="tech-chip">Firebase</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience" class="py-16">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="reveal mb-12">
+          <span class="section-label text-blue-500 dark:text-blue-400">
+            <span class="w-8 h-px bg-blue-500 dark:bg-blue-400"></span>
+            Where I've worked
+          </span>
+          <h2 class="text-4xl font-black text-slate-900 dark:text-white mb-3">Professional Experience</h2>
+          <p class="text-slate-500 dark:text-slate-400 text-lg">My journey in the tech industry.</p>
+        </div>
+        <div class="max-w-3xl">
+          <div class="relative reveal">
+            <div class="absolute left-3 top-6 bottom-0 w-px bg-black/[0.06] dark:bg-white/[0.06]"></div>
+            <div class="pl-12 relative">
+              <div
+                class="absolute left-0 top-4 w-7 h-7 rounded-full bg-white dark:bg-zinc-950 border-2 border-blue-500 flex items-center justify-center">
+                <div class="w-2.5 h-2.5 rounded-full bg-blue-500 animate-pulse"></div>
+              </div>
+              <div class="glass-card">
+                <div class="flex flex-wrap items-start justify-between gap-3 mb-5">
+                  <div>
+                    <h3 class="text-lg font-bold text-slate-900 dark:text-white">Full Stack Software Development Intern
+                    </h3>
+                    <p class="text-blue-500 dark:text-blue-400 font-semibold text-sm mt-0.5">Applied Accounting
+                      Solutions, Bangsar</p>
+                  </div>
+                  <span
+                    class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-blue-500/10 border border-blue-500/20 text-blue-600 dark:text-blue-400 flex-shrink-0">2025
+                    – 2026 &middot; 6 months</span>
+                </div>
+                <ul class="space-y-2.5">
+                  <li class="flex items-start gap-2.5 text-sm text-slate-500 dark:text-slate-400">
+                    <i class="ph ph-caret-right text-blue-500 dark:text-blue-400 flex-shrink-0 mt-0.5"></i>
+                    Collaborated to develop a comprehensive ERP/POS system tailored for an accounting firm.
+                  </li>
+                  <li class="flex items-start gap-2.5 text-sm text-slate-500 dark:text-slate-400">
+                    <i class="ph ph-caret-right text-blue-500 dark:text-blue-400 flex-shrink-0 mt-0.5"></i>
+                    Engineered frontend and backend modules for seamless end-to-end data flow.
+                  </li>
+                  <li class="flex items-start gap-2.5 text-sm text-slate-500 dark:text-slate-400">
+                    <i class="ph ph-caret-right text-blue-500 dark:text-blue-400 flex-shrink-0 mt-0.5"></i>
+                    Designed and managed relational database structures to maintain data integrity for financial
+                    transactions.
+                  </li>
+                  <li class="flex items-start gap-2.5 text-sm text-slate-500 dark:text-slate-400">
+                    <i class="ph ph-caret-right text-blue-500 dark:text-blue-400 flex-shrink-0 mt-0.5"></i>
+                    Executed end-to-end software testing and UI/UX refinements across multiple modules.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="py-16">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="reveal mb-12">
+          <span class="section-label text-blue-500 dark:text-blue-400">
+            <span class="w-8 h-px bg-blue-500 dark:bg-blue-400"></span>
+            Say hello
+          </span>
+          <h2 class="text-4xl font-black text-slate-900 dark:text-white mb-3">Get In Touch</h2>
+          <p class="text-slate-500 dark:text-slate-400 text-lg max-w-xl">I'm currently looking for new opportunities in
+            data analytics and software engineering. My inbox is always open.</p>
+        </div>
+        <div class="max-w-3xl reveal">
+          <div class="glass-card">
+            <div
+              class="w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-500/20 to-violet-500/20 flex items-center justify-center mb-6">
+              <i class="ph ph-paper-plane-tilt text-blue-500 dark:text-blue-400 text-3xl"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-slate-900 dark:text-white mb-2">Let's Connect</h3>
+            <p class="text-slate-500 dark:text-slate-400 mb-8">Whether it's a job opportunity, a collaboration, or just
+              a chat.</p>
+            <div class="grid sm:grid-cols-2 gap-3">
+              <a href="tel:+60108115539" class="contact-link group">
+                <div
+                  class="w-10 h-10 rounded-xl bg-blue-500/10 flex items-center justify-center flex-shrink-0 group-hover:bg-blue-500/20 transition-colors duration-200">
+                  <i class="ph ph-phone text-blue-500 dark:text-blue-400"></i>
+                </div>
+                <div>
+                  <p class="text-xs text-slate-400 font-bold uppercase tracking-wider">Phone</p>
+                  <p class="text-slate-700 dark:text-slate-200 font-medium text-sm">+60 10-811 5539</p>
+                </div>
+              </a>
+              <a href="mailto:hadikayell@gmail.com" class="contact-link group">
+                <div
+                  class="w-10 h-10 rounded-xl bg-blue-500/10 flex items-center justify-center flex-shrink-0 group-hover:bg-blue-500/20 transition-colors duration-200">
+                  <i class="ph ph-envelope-simple text-blue-500 dark:text-blue-400"></i>
+                </div>
+                <div>
+                  <p class="text-xs text-slate-400 font-bold uppercase tracking-wider">Email</p>
+                  <p class="text-slate-700 dark:text-slate-200 font-medium text-sm">hadikayell@gmail.com</p>
+                </div>
+              </a>
+              <a href="https://github.com/mhdimrnhdi" target="_blank" rel="noopener noreferrer"
+                class="contact-link group">
+                <div
+                  class="w-10 h-10 rounded-xl bg-blue-500/10 flex items-center justify-center flex-shrink-0 group-hover:bg-blue-500/20 transition-colors duration-200">
+                  <i class="ph ph-github-logo text-blue-500 dark:text-blue-400"></i>
+                </div>
+                <div>
+                  <p class="text-xs text-slate-400 font-bold uppercase tracking-wider">GitHub</p>
+                  <p class="text-slate-700 dark:text-slate-200 font-medium text-sm">mhdimrnhdi</p>
+                </div>
+              </a>
+              <a href="https://linkedin.com/in/imranhadikhairi" target="_blank" rel="noopener noreferrer"
+                class="contact-link group">
+                <div
+                  class="w-10 h-10 rounded-xl bg-blue-500/10 flex items-center justify-center flex-shrink-0 group-hover:bg-blue-500/20 transition-colors duration-200">
+                  <i class="ph ph-linkedin-logo text-blue-500 dark:text-blue-400"></i>
+                </div>
+                <div>
+                  <p class="text-xs text-slate-400 font-bold uppercase tracking-wider">LinkedIn</p>
+                  <p class="text-slate-700 dark:text-slate-200 font-medium text-sm">imranhadikhairi</p>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-black/[0.05] dark:border-white/[0.05] py-8">
+    <div class="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p class="text-slate-400 dark:text-slate-500 text-sm">© 2026 Muhammad Imran Hadi. Built with Vite + Tailwind CSS.
+      </p>
+      <div class="flex gap-4">
+        <a href="https://github.com/mhdimrnhdi" target="_blank" rel="noopener noreferrer"
+          class="text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors duration-200"><i
+            class="ph ph-github-logo text-lg"></i></a>
+        <a href="https://linkedin.com/in/imranhadikhairi" target="_blank" rel="noopener noreferrer"
+          class="text-slate-400 hover:text-blue-500 transition-colors duration-200"><i
+            class="ph ph-linkedin-logo text-lg"></i></a>
+        <a href="mailto:hadikayell@gmail.com"
+          class="text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors duration-200"><i
+            class="ph ph-envelope-simple text-lg"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+
 </html>
